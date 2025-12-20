@@ -8,6 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { format } from "date-fns";
+import { isYesterday } from "date-fns";
 
 interface RelativeTimeProps {
   date: Date;
@@ -22,8 +23,8 @@ export default function RelativeTime({ date, className }: RelativeTimeProps) {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <time dateTime={date.toISOString()} className={className}>
-            {formatTimeAgo(date)}
+          <time className={className}>
+            {isYesterday(date) ? "Yesterday" : formatTimeAgo(date)}
           </time>
         </TooltipTrigger>
         <TooltipContent>

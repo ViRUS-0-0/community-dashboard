@@ -7,7 +7,7 @@ org:
   name: CircuitVerse
   description: CircuitVerse is an open-source platform that helps students and educators design, simulate, and share digital circuits online.
   url: http://localhost:3000
-  logo_url: http://localhost:3000/CircuitVerse.svg
+  logo_url: https://avatars.githubusercontent.com/u/42944450?s=280&v=4
   start_date: 2018-01-01
   socials:
     github: https://github.com/CircuitVerse
@@ -19,7 +19,7 @@ org:
 meta:
   title: Leaderboard - CircuitVerse
   description: CircuitVerse Leaderboard tracks weekly open-source contributions across the CircuitVerse organization.
-  image_url: http://localhost:3000/CircuitVerse.svg
+  image_url: https://avatars.githubusercontent.com/u/42944450?s=280&v=4
   site_url: http://localhost:3000
   favicon_url: https://circuitverse.org/favicon.ico
 

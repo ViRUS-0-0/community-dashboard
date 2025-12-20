@@ -3,7 +3,7 @@ import path from "path";
 
 const ORG = "CircuitVerse";
 const GITHUB_API = "https://api.github.com";
-const TOKEN = process.env.GITHUB_TOKEN;
+const TOKEN = "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";
 
 if (!TOKEN) {
   throw new Error("GITHUB_TOKEN is required");
@@ -14,7 +14,7 @@ if (!TOKEN) {
 const POINTS = {
   PR_OPENED: 2,
   PR_MERGED: 5,
-  REVIEW: 4,          // to be added next
+  REVIEW: 4, // to be added next
   ISSUE_OPENED: 1,
   LABEL_ADDED: 1,
   LABEL_REMOVED: 1,
@@ -38,17 +38,36 @@ function isBotUser(user: any): boolean {
   return login.endsWith("[bot]");
 }
 
-
 /* ---------------- Types ---------------- */
 
-type UserEntry = {
+export type UserEntry = {
   username: string;
   name: string | null;
   avatar_url: string | null;
   role: string | null;
   total_points: number;
-  activity_breakdown: Record<string, { count: number; points: number }>;
-  daily_activity: { date: string; count: number; points: number }[];
+  activity_breakdown: Record<
+    string,
+    { count: number; points: number }
+  >;
+  daily_activity: {
+    date: string;
+    count: number;
+    points: number;
+  }[];
+};
+
+export type ActivityItem = {
+  slug: string;
+  type: string;
+  title: string | null;
+  occured_at?: string;
+  closed_at?: string;
+  points: number;
+  link?: string | null;
+  contributor: string;
+  contributor_name: string | null;
+  contributor_avatar_url: string | null;
 };
 
 /* ---------------- Helpers ---------------- */
@@ -63,7 +82,9 @@ async function gh(url: string) {
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`GitHub API error ${res.status}: ${text}`);
+    throw new Error(
+      `GitHub API error ${res.status}: ${text}`
+    );
   }
 
   return res.json();
@@ -75,7 +96,10 @@ function dateISO(daysAgo: number) {
   return d.toISOString();
 }
 
-function ensureUser(map: Map<string, UserEntry>, user: any) {
+function ensureUser(
+  map: Map<string, UserEntry>,
+  user: any
+) {
   if (!map.has(user.login)) {
     map.set(user.login, {
       username: user.login,
@@ -100,7 +124,10 @@ function addActivity(
 
   entry.total_points += points;
 
-  entry.activity_breakdown[type] ??= { count: 0, points: 0 };
+  entry.activity_breakdown[type] ??= {
+    count: 0,
+    points: 0,
+  };
   entry.activity_breakdown[type].count += 1;
   entry.activity_breakdown[type].points += points;
 
@@ -115,9 +142,13 @@ function addActivity(
 
 /* ---------------- Core Generator ---------------- */
 
-async function generate(period: "week" | "month" | "year", days: number) {
+async function generate(
+  period: "week" | "2week" | "3week" | "month" | "2month" | "year",
+  days: number
+) {
   const since = dateISO(days);
   const users = new Map<string, UserEntry>();
+  const activities: ActivityItem[] = [];
 
   /* ---- PRs Opened ---- */
   const prs = await gh(
@@ -127,7 +158,23 @@ async function generate(period: "week" | "month" | "year", days: number) {
   for (const pr of prs.items ?? []) {
     if (isBotUser(pr.user)) continue;
     const user = ensureUser(users, pr.user);
-    addActivity(user, "PR opened", pr.created_at, POINTS.PR_OPENED);
+    addActivity(
+      user,
+      "PR opened",
+      pr.created_at,
+      POINTS.PR_OPENED
+    );
+    activities.push({
+      slug: `pr-opened-${pr.id}`,
+      type: "PR opened",
+      title: pr.title,
+      occured_at: pr.created_at,
+      points: POINTS.PR_OPENED,
+      link: pr.html_url,
+      contributor: pr.user.login,
+      contributor_name: pr.user.login,
+      contributor_avatar_url: pr.user.avatar_url,
+    });
   }
 
   /* ---- PRs Merged ---- */
@@ -138,7 +185,23 @@ async function generate(period: "week" | "month" | "year", days: number) {
   for (const pr of merged.items ?? []) {
     if (isBotUser(pr.user)) continue;
     const user = ensureUser(users, pr.user);
-    addActivity(user, "PR merged", pr.closed_at, POINTS.PR_MERGED);
+    addActivity(
+      user,
+      "PR merged",
+      pr.closed_at,
+      POINTS.PR_MERGED
+    );
+    activities.push({
+      slug: `pr-merged-${pr.id}`,
+      type: "PR Merged",
+      title: pr.title,
+      closed_at: pr.closed_at,
+      points: POINTS.PR_MERGED,
+      link: pr.html_url,
+      contributor: pr.user.login,
+      contributor_name: pr.user.login,
+      contributor_avatar_url: pr.user.avatar_url,
+    });
   }
 
   /* ---- Issues Opened ---- */
@@ -149,7 +212,23 @@ async function generate(period: "week" | "month" | "year", days: number) {
   for (const issue of issues.items ?? []) {
     if (isBotUser(issue.user)) continue;
     const user = ensureUser(users, issue.user);
-    addActivity(user, "Issue opened", issue.created_at, POINTS.ISSUE_OPENED);
+    addActivity(
+      user,
+      "Issue opened",
+      issue.created_at,
+      POINTS.ISSUE_OPENED
+    );
+    activities.push({
+      slug: `issue-opened-${issue.id}`,
+      type: "Issue opened",
+      title: issue.title,
+      occured_at: issue.created_at,
+      points: POINTS.ISSUE_OPENED,
+      link: issue.html_url,
+      contributor: issue.user.login,
+      contributor_name: issue.user.login,
+      contributor_avatar_url: issue.user.avatar_url,
+    });
   }
 
   /* ---- Output ---- */
@@ -160,10 +239,13 @@ async function generate(period: "week" | "month" | "year", days: number) {
   const json = {
     period,
     updatedAt: Date.now(),
-    startDate: new Date(dateISO(days)).toISOString().split("T")[0],
+    startDate: new Date(dateISO(days))
+      .toISOString()
+      .split("T")[0],
     endDate: new Date().toISOString().split("T")[0],
     hiddenRoles: [],
     entries,
+    activities,
     topByActivity: {},
   };
 
@@ -184,7 +266,10 @@ async function generate(period: "week" | "month" | "year", days: number) {
 
 async function run() {
   await generate("week", 7);
+  await generate("2week", 14);
+  await generate("3week", 21);
   await generate("month", 30);
+  await generate("2month", 60);
   await generate("year", 365);
 }
 

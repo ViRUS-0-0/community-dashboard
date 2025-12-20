@@ -1,35 +1,126 @@
 // lib/db.ts — temporary stub (no DB)
 
-export interface Activity {
+import { UserEntry } from "@/scripts/generateLeaderboard";
+import fs from "fs";
+import path from "path";
+
+type ActivityItem = {
   slug: string;
   contributor: string;
-  activity_definition: string;
-  title?: string;
-  occured_at: Date;
-  link?: string;
-  text?: string;
-  points?: number | null;
-  meta?: Record<string, unknown>;
-}
+  contributor_name: string | null;
+  contributor_avatar_url: string | null;
+  contributor_role: string | null;
+  occured_at: string;
+  closed_at: string;
+  title?: string | null;
+  text?: string | null;
+  link?: string | null;
+  points: number | null;
+};
 
-export interface ActivityGroup {
+export type ActivityGroup = {
   activity_definition: string;
   activity_name: string;
-  activity_description: string | null;
-  activity_points: number | null;
-  activities: Array<
-    Activity & {
-      contributor_name: string | null;
-      contributor_avatar_url: string | null;
-      contributor_role: string | null;
-    }
-  >;
-}
+  activity_description?: string | null;
+  activities: ActivityItem[];
+};
+
+type RecentActivitiesJSON = {
+  updatedAt: number;
+  entries: UserEntry[];
+  groups: ActivityGroup[];
+};
 
 // Used by app/page.tsx
-export async function getRecentActivitiesGroupedByType(_days: number): Promise<ActivityGroup[]> {
-  return [];
+// export async function getRecentActivitiesGroupedByType(valid: "week" | "month" | "year"): Promise<ActivityGroup[]> {
+//   const filePath = path.join(
+//     process.cwd(),
+//     "public",
+//     "leaderboard",
+//     `${valid}.json`
+//   );
+
+//   let activityGroups: ActivityGroup[] = [];
+
+//   if (fs.existsSync(filePath)) {
+//     const file = fs.readFileSync(filePath, "utf-8");
+//     const data: RecentActivitiesJSON = JSON.parse(file);
+    
+//     const groupsFromEntries: ActivityGroup[] =
+//       Object.entries(
+//         data.entries.reduce((acc, user) => {
+//           for (const [type, meta] of Object.entries(
+//             user.activity_breakdown
+//           )) {
+//             if (!acc[type]) {
+//               acc[type] = {
+//                 activity_definition: type,
+//                 activity_name: type,
+//                 activities: [],
+//               };
+//             }
+
+//             acc[type].activities.push({
+//               slug: `${user.username}-${type}`,
+//               contributor: user.username,
+//               contributor_name: user.name,
+//               contributor_avatar_url: user.avatar_url,
+//               occured_at: data.updatedAt,
+//               points: meta.points,
+//             });
+//           }
+//           return acc;
+//         }, {} as Record<string, ActivityGroup>)
+//       ).map(([, group]) => group);
+
+//     activityGroups = groupsFromEntries;
+//   }
+  
+//   return activityGroups;
+// }
+
+export async function getRecentActivitiesGroupedByType(
+  valid: "week" | "2week" | "3week" | "month" | "2month" | "year"
+): Promise<ActivityGroup[]> {
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "leaderboard",
+    `${valid}.json`
+  );
+
+  if (!fs.existsSync(filePath)) return [];
+
+  const file = fs.readFileSync(filePath, "utf-8");
+  const data = JSON.parse(file);
+
+  const groups = new Map<string, ActivityGroup>();
+
+  for (const activity of data.activities ?? []) {
+    if (!groups.has(activity.type)) {
+      groups.set(activity.type, {
+        activity_definition: activity.type,
+        activity_name: activity.type,
+        activity_description: null,
+        activities: [],
+      });
+    }
+
+    groups.get(activity.type)!.activities.push(activity);
+  }
+
+  // newest first
+  for (const group of groups.values()) {
+    group.activities.sort(
+      (a, b) =>
+        new Date(b.occured_at).getTime() -
+        new Date(a.occured_at).getTime()
+    );
+  }
+
+  return [...groups.values()];
 }
+
 
 // (Optional) stubs for other imports; add as you see “module not found” errors:
 

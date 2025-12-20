@@ -1,7 +1,7 @@
 {
-  "period": "month",
-  "updatedAt": 1766251640579,
-  "startDate": "2025-11-20",
+  "period": "2month",
+  "updatedAt": 1766251645362,
+  "startDate": "2025-10-21",
   "endDate": "2025-12-20",
   "hiddenRoles": [],
   "entries": [
@@ -10,15 +10,15 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
       "role": "Contributor",
-      "total_points": 40,
+      "total_points": 45,
       "activity_breakdown": {
         "PR opened": {
           "count": 12,
           "points": 24
         },
         "PR merged": {
-          "count": 2,
-          "points": 10
+          "count": 3,
+          "points": 15
         },
         "Issue opened": {
           "count": 6,
@@ -93,6 +93,11 @@
         },
         {
           "date": "2025-12-03",
+          "count": 1,
+          "points": 5
+        },
+        {
+          "date": "2025-11-19",
           "count": 1,
           "points": 5
         },
@@ -319,15 +324,15 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4",
       "role": "Contributor",
-      "total_points": 15,
+      "total_points": 20,
       "activity_breakdown": {
         "PR opened": {
           "count": 5,
           "points": 10
         },
         "PR merged": {
-          "count": 1,
-          "points": 5
+          "count": 2,
+          "points": 10
         }
       },
       "daily_activity": [
@@ -355,6 +360,11 @@
           "date": "2025-11-26",
           "count": 1,
           "points": 2
+        },
+        {
+          "date": "2025-11-15",
+          "count": 1,
+          "points": 5
         },
         {
           "date": "2025-11-30",
@@ -750,6 +760,86 @@
       ]
     },
     {
+      "username": "SouparnaChatterjee",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/115988950?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-11-19",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
+      "username": "JatsuAkaYashvant",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/146776812?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-10-30",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
+      "username": "vnydv",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/96142751?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-10-28",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
+      "username": "RandintN",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/13877818?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-11-03",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
       "username": "ThatDeparted2061",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/166894150?v=4",
@@ -764,6 +854,26 @@
       "daily_activity": [
         {
           "date": "2025-11-30",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
+      "username": "Stitipragyanbarik",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/123853301?v=4",
+      "role": "Contributor",
+      "total_points": 5,
+      "activity_breakdown": {
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-11-03",
           "count": 1,
           "points": 5
         }
@@ -941,6 +1051,31 @@
         },
         {
           "date": "2025-11-30",
+          "count": 1,
+          "points": 2
+        }
+      ]
+    },
+    {
+      "username": "anushkaa-dubey",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/136051483?v=4",
+      "role": "Contributor",
+      "total_points": 4,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 2,
+          "points": 4
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-02",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-11-20",
           "count": 1,
           "points": 2
         }
@@ -1302,26 +1437,6 @@
       "daily_activity": [
         {
           "date": "2025-12-06",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
-      "username": "anushkaa-dubey",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/136051483?v=4",
-      "role": "Contributor",
-      "total_points": 2,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-02",
           "count": 1,
           "points": 2
         }
@@ -2522,6 +2637,17 @@
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
     },
     {
+      "slug": "pr-opened-3646087306",
+      "type": "PR opened",
+      "title": "docs: update documentation",
+      "occured_at": "2025-11-20T08:34:36Z",
+      "points": 2,
+      "link": "https://github.com/CircuitVerse/mobile-app/pull/444",
+      "contributor": "anushkaa-dubey",
+      "contributor_name": "anushkaa-dubey",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/136051483?v=4"
+    },
+    {
       "slug": "pr-merged-3750110457",
       "type": "PR Merged",
       "title": "chore: install netcat-openbsd and fix bundler setup in devcontainer",
@@ -2665,6 +2791,39 @@
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
     },
     {
+      "slug": "pr-merged-3642183105",
+      "type": "PR Merged",
+      "title": "Update footer year to 2025 (#734)",
+      "closed_at": "2025-11-19T11:06:42Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/Interactive-Book/pull/735",
+      "contributor": "naman79820",
+      "contributor_name": "naman79820",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
+    },
+    {
+      "slug": "pr-merged-3641551954",
+      "type": "PR Merged",
+      "title": "fix: update copyright year to 2025 in documentation",
+      "closed_at": "2025-11-19T08:34:30Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/Interactive-Book/pull/733",
+      "contributor": "SouparnaChatterjee",
+      "contributor_name": "SouparnaChatterjee",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/115988950?v=4"
+    },
+    {
+      "slug": "pr-merged-3623929051",
+      "type": "PR Merged",
+      "title": "Fix ActionView::Template::Error by removing data attribute from project JSON",
+      "closed_at": "2025-11-15T08:25:30Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6350",
+      "contributor": "h30s",
+      "contributor_name": "h30s",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4"
+    },
+    {
       "slug": "pr-merged-3612442685",
       "type": "PR Merged",
       "title": "LTI: guard score submission when outcome URL or sourced ID is missing to prevent URI::InvalidURIError (fixes #6284)",
@@ -2674,6 +2833,39 @@
       "contributor": "h30s",
       "contributor_name": "h30s",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4"
+    },
+    {
+      "slug": "pr-merged-3541678491",
+      "type": "PR Merged",
+      "title": "Update README with multilingual support section and new screenshots",
+      "closed_at": "2025-10-30T17:01:57Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/mobile-app/pull/440",
+      "contributor": "JatsuAkaYashvant",
+      "contributor_name": "JatsuAkaYashvant",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/146776812?v=4"
+    },
+    {
+      "slug": "pr-merged-3460169003",
+      "type": "PR Merged",
+      "title": "Expected to return JSON but returning string",
+      "closed_at": "2025-10-28T19:05:20Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/cv-frontend-vue/pull/658",
+      "contributor": "vnydv",
+      "contributor_name": "vnydv",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/96142751?v=4"
+    },
+    {
+      "slug": "pr-merged-3427495630",
+      "type": "PR Merged",
+      "title": "Add Balanced Ternary mention and examples",
+      "closed_at": "2025-11-03T09:27:02Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/Interactive-Book/pull/726",
+      "contributor": "RandintN",
+      "contributor_name": "RandintN",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/13877818?v=4"
     },
     {
       "slug": "pr-merged-3416750084",
@@ -2696,6 +2888,17 @@
       "contributor": "Nihal4777",
       "contributor_name": "Nihal4777",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4"
+    },
+    {
+      "slug": "pr-merged-2766214763",
+      "type": "PR Merged",
+      "title": "docs(contributing): fix typos, improve clarity, and enhance formatting in CONTRIBUTING.md",
+      "closed_at": "2025-11-03T11:41:47Z",
+      "points": 5,
+      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/5260",
+      "contributor": "Stitipragyanbarik",
+      "contributor_name": "Stitipragyanbarik",
+      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/123853301?v=4"
     },
     {
       "slug": "issue-opened-3748673839",

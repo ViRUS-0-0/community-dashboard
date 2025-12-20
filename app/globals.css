@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+body::selection {
+  background-color: #22c55e4d;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

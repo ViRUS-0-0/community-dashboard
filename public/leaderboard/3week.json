@@ -1,133 +1,10 @@
 {
-  "period": "month",
-  "updatedAt": 1766251640579,
-  "startDate": "2025-11-20",
+  "period": "3week",
+  "updatedAt": 1766251635796,
+  "startDate": "2025-11-29",
   "endDate": "2025-12-20",
   "hiddenRoles": [],
   "entries": [
-    {
-      "username": "naman79820",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
-      "role": "Contributor",
-      "total_points": 40,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 12,
-          "points": 24
-        },
-        "PR merged": {
-          "count": 2,
-          "points": 10
-        },
-        "Issue opened": {
-          "count": 6,
-          "points": 6
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-15",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-10",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-06",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-05",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-04",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-03",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-01",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-30",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-28",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-26",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-23",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-22",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-12",
-          "count": 1,
-          "points": 5
-        },
-        {
-          "date": "2025-12-03",
-          "count": 1,
-          "points": 5
-        },
-        {
-          "date": "2025-12-13",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-12-07",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-12-06",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-12-03",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-11-30",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-11-29",
-          "count": 1,
-          "points": 1
-        }
-      ]
-    },
     {
       "username": "senutpal",
       "name": null,
@@ -232,6 +109,109 @@
       ]
     },
     {
+      "username": "naman79820",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
+      "role": "Contributor",
+      "total_points": 32,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 8,
+          "points": 16
+        },
+        "PR merged": {
+          "count": 2,
+          "points": 10
+        },
+        "Issue opened": {
+          "count": 6,
+          "points": 6
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-15",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-10",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-06",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-05",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-04",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-03",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-01",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-11-30",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-12",
+          "count": 1,
+          "points": 5
+        },
+        {
+          "date": "2025-12-03",
+          "count": 1,
+          "points": 5
+        },
+        {
+          "date": "2025-12-13",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-07",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-06",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-12-03",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-11-30",
+          "count": 1,
+          "points": 1
+        },
+        {
+          "date": "2025-11-29",
+          "count": 1,
+          "points": 1
+        }
+      ]
+    },
+    {
       "username": "Atharva7126",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4",
@@ -311,55 +291,6 @@
           "date": "2025-11-30",
           "count": 1,
           "points": 1
-        }
-      ]
-    },
-    {
-      "username": "h30s",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4",
-      "role": "Contributor",
-      "total_points": 15,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 5,
-          "points": 10
-        },
-        "PR merged": {
-          "count": 1,
-          "points": 5
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-05",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-05",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-05",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-04",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-26",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-11-30",
-          "count": 1,
-          "points": 5
         }
       ]
     },
@@ -481,6 +412,50 @@
           "date": "2025-12-04",
           "count": 1,
           "points": 1
+        }
+      ]
+    },
+    {
+      "username": "h30s",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4",
+      "role": "Contributor",
+      "total_points": 13,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 4,
+          "points": 8
+        },
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-05",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-05",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-05",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-04",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-11-30",
+          "count": 1,
+          "points": 5
         }
       ]
     },
@@ -1342,66 +1317,6 @@
       "daily_activity": [
         {
           "date": "2025-11-30",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
-      "username": "KumarADITHYA123",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/163162210?v=4",
-      "role": "Contributor",
-      "total_points": 2,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-11-29",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
-      "username": "Nid-debug",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/182516930?v=4",
-      "role": "Contributor",
-      "total_points": 2,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-11-23",
-          "count": 1,
-          "points": 2
-        }
-      ]
-    },
-    {
-      "username": "Prince-ES",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/173123079?v=4",
-      "role": "Contributor",
-      "total_points": 2,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-11-23",
           "count": 1,
           "points": 2
         }
@@ -2432,94 +2347,6 @@
       "contributor": "Atharva7126",
       "contributor_name": "Atharva7126",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/177391853?v=4"
-    },
-    {
-      "slug": "pr-opened-3676608521",
-      "type": "PR opened",
-      "title": "feat: Add Clock Divider Component (#587)",
-      "occured_at": "2025-11-29T10:35:56Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/cv-frontend-vue/pull/680",
-      "contributor": "KumarADITHYA123",
-      "contributor_name": "KumarADITHYA123",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/163162210?v=4"
-    },
-    {
-      "slug": "pr-opened-3675681008",
-      "type": "PR opened",
-      "title": "Fix N+1 query issues flagged by Bullet",
-      "occured_at": "2025-11-28T18:53:06Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6367",
-      "contributor": "naman79820",
-      "contributor_name": "naman79820",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
-    },
-    {
-      "slug": "pr-opened-3667770896",
-      "type": "PR opened",
-      "title": "Fix: Prevent duplicate assignment projects (RecordNotUnique)",
-      "occured_at": "2025-11-26T14:34:27Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6365",
-      "contributor": "h30s",
-      "contributor_name": "h30s",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/183348352?v=4"
-    },
-    {
-      "slug": "pr-opened-3667344595",
-      "type": "PR opened",
-      "title": "Fix N+1 on user dashboard: preload circuit_preview_attachment",
-      "occured_at": "2025-11-26T12:38:35Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6364",
-      "contributor": "naman79820",
-      "contributor_name": "naman79820",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
-    },
-    {
-      "slug": "pr-opened-3656016640",
-      "type": "PR opened",
-      "title": "#5442-fix: Move login button below reCAPTCHA",
-      "occured_at": "2025-11-23T13:46:45Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6361",
-      "contributor": "Nid-debug",
-      "contributor_name": "Nid-debug",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/182516930?v=4"
-    },
-    {
-      "slug": "pr-opened-3655808715",
-      "type": "PR opened",
-      "title": "Fix: Improve search page: handle blank query with friendly message and image",
-      "occured_at": "2025-11-23T10:26:31Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6359",
-      "contributor": "Prince-ES",
-      "contributor_name": "Prince-ES",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/173123079?v=4"
-    },
-    {
-      "slug": "pr-opened-3655729507",
-      "type": "PR opened",
-      "title": "Fix: prevent statement timeout by adding lock timeout + retry in AssignmentDeadlineSubmissionJob (#6277)",
-      "occured_at": "2025-11-23T09:27:25Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6358",
-      "contributor": "naman79820",
-      "contributor_name": "naman79820",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
-    },
-    {
-      "slug": "pr-opened-3655111397",
-      "type": "PR opened",
-      "title": "Fix: restrict simulator embed/show to HTML and reject non-HTML formats (#6352)",
-      "occured_at": "2025-11-22T21:52:44Z",
-      "points": 2,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6357",
-      "contributor": "naman79820",
-      "contributor_name": "naman79820",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
     },
     {
       "slug": "pr-merged-3750110457",

@@ -1,236 +1,181 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Avatar,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/ui/avatar";
 import RelativeTime from "@/components/RelativeTime";
+import { ActivityTypes } from "@/components/Leaderboard/stats-card/activity-types";
+import { ActivityLineCard } from "@/components/Leaderboard/stats-card/activity-line-card";
+import ActiveContributors from "@/components/Leaderboard/stats-card/active-contributors";
+
+import {
+  ActivityGroup,
+  getRecentActivitiesGroupedByType,
+} from "@/lib/db";
+
 import Link from "next/link";
-import { Activity, Users, TrendingUp } from "lucide-react";
 import { getConfig } from "@/lib/config";
-import fs from "fs";
-import path from "path";
-
-/* -------------------- Types -------------------- */
-
-type ActivityItem = {
-  slug: string;
-  contributor: string;
-  contributor_name: string | null;
-  contributor_avatar_url: string | null;
-  contributor_role: string | null;
-  occured_at: string;
-  title?: string | null;
-  text?: string | null;
-  link?: string | null;
-  points: number | null;
-};
-
-type ActivityGroup = {
-  activity_definition: string;
-  activity_name: string;
-  activity_description?: string | null;
-  activities: ActivityItem[];
-};
-
-type RecentActivitiesJSON = {
-  updatedAt: number;
-  groups: ActivityGroup[];
-};
-
-/* -------------------- Page -------------------- */
+import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 
 export default async function Home() {
   const config = getConfig();
 
-  // 📄 Read static JSON from disk (NO fetch)
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "leaderboard",
-    "recent-activities.json"
-  );
+  const totalCount = (groups: ActivityGroup[]) =>
+    groups.reduce((sum, g) => sum + g.activities.length, 0);
 
-  let activityGroups: ActivityGroup[] = [];
+  const week = await getRecentActivitiesGroupedByType("week");
+  const week2 = await getRecentActivitiesGroupedByType("2week");
+  const week3 = await getRecentActivitiesGroupedByType("3week");
+  const month = await getRecentActivitiesGroupedByType("month");
+  const month2 = await getRecentActivitiesGroupedByType("2month");
 
-  if (fs.existsSync(filePath)) {
-    const file = fs.readFileSync(filePath, "utf-8");
-    const data: RecentActivitiesJSON = JSON.parse(file);
-    activityGroups = data.groups ?? [];
-  }
-
-  // 📊 Stats
-  const totalActivities = activityGroups.reduce(
-    (sum, group) => sum + group.activities.length,
-    0
-  );
-
-  const uniqueContributors = new Set(
-    activityGroups.flatMap((group) =>
-      group.activities.map((a) => a.contributor)
-    )
-  ).size;
-
-  const totalActivityTypes = activityGroups.length;
+  const w1 = totalCount(week);
+  const w2 = totalCount(week2) - w1;
+  const w3 = totalCount(week3) - totalCount(week2);
+  const w4 = totalCount(month) - totalCount(week3);
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      {/* Hero */}
-      <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">{config.org.name}</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          {config.org.description}
-        </p>
-      </div>
+    <div className="min-h-screen bg-zinc-50 dark:bg-black transition-colors">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 space-y-14">
+        <section className="text-center space-y-4">
+          <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-teal-400 via-emerald-400 to-lime-400
+">
+            {config.org.name}
+          </h1>
+          <p className="max-w-2xl mx-auto text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+            {config.org.description}
+          </p>
+        </section>
 
-      {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">
-              Total Activities
-            </CardTitle>
-            <Activity className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalActivities}</div>
-            <p className="text-xs text-muted-foreground">Recent</p>
-          </CardContent>
-        </Card>
+        <section className="grid gap-6 select-none sm:grid-cols-2 lg:grid-cols-3">
+          <ActivityLineCard
+            totalActivitiesLabel={totalCount(month)}
+            prev_month={totalCount(month2)}
+            week1={w1}
+            week2={w2}
+            week3={w3}
+            week4={w4}
+          />
+          <ActiveContributors data={month} />
+          <ActivityTypes
+            entries={month}
+            totalActivities={totalCount(month)}
+          />
+        </section>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">
-              Active Contributors
-            </CardTitle>
-            <Users className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{uniqueContributors}</div>
-            <p className="text-xs text-muted-foreground">Recent</p>
-          </CardContent>
-        </Card>
+        <section className="space-y-6 max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-emerald-500">
+              Recent Activities
+            </h2>
+            <Link
+              href="/leaderboard"
+              className="flex items-center gap-2 text-sm font-medium text-emerald-600 hover:underline"
+            >
+              View Leaderboard
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">
-              Activity Types
-            </CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{totalActivityTypes}</div>
-            <p className="text-xs text-muted-foreground">Different types</p>
-          </CardContent>
-        </Card>
-      </div>
+          {week.length === 0 ? (
+            <div className="rounded-2xl border p-10 text-center text-zinc-500">
+              No activity in this period
+            </div>
+          ) : (
+            <div className="space-y-8">
+              {week.map((group) => (
+                <div key={group.activity_definition} className="space-y-3 select-none">
+                  <div className="flex items-center justify-between px-1">
+                    <div className="flex items-center gap-2">
+                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      <h3 className="text-xs uppercase tracking-wider text-zinc-500">
+                        {group.activity_name}
+                      </h3>
+                    </div>
+                    <span className="text-xs font-mono text-zinc-400">
+                      {group.activities.length} / WEEK
+                    </span>
+                  </div>
 
-      {/* Activity Feed */}
-      <div className="space-y-8">
-        <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-bold">Recent Activities</h2>
-          <Link
-            href="/leaderboard"
-            className="text-sm text-primary hover:underline"
-          >
-            View Leaderboard →
-          </Link>
-        </div>
-
-        {activityGroups.length === 0 ? (
-          <Card>
-            <CardContent className="py-12 text-center text-muted-foreground">
-              No recent activities
-            </CardContent>
-          </Card>
-        ) : (
-          activityGroups.map((group) => (
-            <Card key={group.activity_definition}>
-              <CardHeader>
-                <CardTitle className="text-xl">
-                  {group.activity_name}
-                </CardTitle>
-                {group.activity_description && (
-                  <p className="text-sm text-muted-foreground">
-                    {group.activity_description}
-                  </p>
-                )}
-              </CardHeader>
-
-              <CardContent className="space-y-4">
-                {group.activities.map((activity) => (
-                  <div
-                    key={activity.slug}
-                    className="flex items-start gap-4 border-b pb-4 last:border-0"
-                  >
-                    <Avatar className="h-10 w-10">
-                      <AvatarImage
-                        src={activity.contributor_avatar_url || undefined}
-                      />
-                      <AvatarFallback>
-                        {(activity.contributor_name ||
-                          activity.contributor)
-                          .substring(0, 2)
-                          .toUpperCase()}
-                      </AvatarFallback>
-                    </Avatar>
-
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <Link
-                          href={`/${activity.contributor}`}
-                          className="font-medium hover:text-primary"
-                        >
-                          {activity.contributor_name ||
-                            activity.contributor}
-                        </Link>
-
-                        {activity.contributor_role && (
-                          <span className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">
-                            {activity.contributor_role}
-                          </span>
-                        )}
-
-                        <RelativeTime
-                          date={new Date(activity.occured_at)}
-                          className="text-sm text-muted-foreground"
-                        />
-                      </div>
-
-                      {activity.title && (
-                        <p className="text-sm mt-1 truncate">
-                          {activity.link ? (
-                            <a
-                              href={activity.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="hover:text-primary hover:underline"
-                            >
-                              {activity.title}
-                            </a>
-                          ) : (
-                            activity.title
-                          )}
-                        </p>
-                      )}
-
-                      {activity.text && (
+                  <div className="rounded-2xl border bg-white dark:bg-zinc-900 overflow-hidden">
+                    <div className="divide-y">
+                      {group.activities.slice(0, 10).map((activity) => (
                         <div
-                          className="text-sm text-muted-foreground prose prose-sm"
-                          dangerouslySetInnerHTML={{
-                            __html: activity.text,
-                          }}
-                        />
-                      )}
+                          key={activity.slug}
+                          className="group relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-zinc-50 dark:hover:bg-white/5 transition"
+                        >
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition" />
+
+                          <Avatar className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
+                            <AvatarImage
+                              src={activity.contributor_avatar_url ?? undefined}
+                            />
+                            <AvatarFallback>
+                              {(activity.contributor_name ??
+                                activity.contributor)
+                                .slice(0, 2)
+                                .toUpperCase()}
+                            </AvatarFallback>
+                          </Avatar>
+
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between gap-2">
+                              <p className="truncate text-sm font-medium">
+                                {activity.title ?? "Untitled Activity"}
+                              </p>
+
+                              <Link
+                                href={activity.link ?? "#"}
+                                target="_blank"
+                                className="opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400 hover:text-emerald-500 p-1"
+                              >
+                                <ArrowUpRight className="h-4 w-4" />
+                              </Link>
+                            </div>
+
+                            <div className="flex items-center gap-2 mt-0.5 text-xs text-zinc-500">
+                              <span>
+                                by{" "}
+                                <span className="text-zinc-700 dark:text-zinc-300">
+                                  {activity.contributor_name ??
+                                    activity.contributor}
+                                </span>
+                              </span>
+                              <span>•</span>
+                              <RelativeTime
+                                date={new Date(
+                                  activity.occured_at ??
+                                    activity.closed_at
+                                )}
+                              />
+                            </div>
+                          </div>
+
+                          {(activity.points ?? 0) > 0 && (
+                            <div className="flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold bg-zinc-100 dark:bg-zinc-800">
+                              <Sparkles className="h-3 w-3 text-emerald-500" />
+                              {activity.points}
+                            </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
 
-                    {activity.points && activity.points > 0 && (
-                      <div className="text-sm font-medium text-primary">
-                        +{activity.points}
-                      </div>
-                    )}
+                    <div className="bg-zinc-50 dark:bg-white/5 px-4 py-2 text-[10px] text-center text-zinc-400 uppercase tracking-widest">
+                      Activity Stream
+                    </div>
                   </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))
-        )}
+                </div>
+              ))}
+            </div>
+          )}
+        </section>
       </div>
     </div>
   );
