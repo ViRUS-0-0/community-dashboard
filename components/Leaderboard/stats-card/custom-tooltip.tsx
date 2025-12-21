@@ -8,7 +8,7 @@ export const CustomPieTooltip = ({ active, payload }: any) => {
       <div className="flex items-center gap-2">
         <span
           className="h-2 w-2 rounded-full mb-0.5"
-          style={{ backgroundColor: color ? color : "#22c55e" }}
+          style={{ backgroundColor: color ? color : "#50B78B" }}
         />
         <span className="dark:text-zinc-300 text-black font-medium">{name}</span>
       </div>

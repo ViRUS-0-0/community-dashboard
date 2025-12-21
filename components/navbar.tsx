@@ -57,7 +57,7 @@ const Navbar = ({ config }: NavbarProps) => {
                     px-4 py-1.5 text-sm font-medium rounded-full transition-all
                     ${
                       active
-                        ? "bg-[#96D9C0] dark:bg-[#06402B] text-primary"
+                        ? "bg-[#50B78B]/20 text-[#50B78B] dark:bg-[#50B78B]/30 dark:text-[#50B78B]"
                         : "text-muted-foreground hover:text-primary"
                     }
                   `}
@@ -88,7 +88,7 @@ const Navbar = ({ config }: NavbarProps) => {
                   px-3 py-2 rounded-full transition-all
                   ${
                     active
-                      ? "bg-emerald-500/20 text-emerald-600 dark:text-emerald-400"
+                      ? "bg-[#50B78B]/20 text-[#50B78B] dark:text-[#50B78B]"
                       : "text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
                   }
                 `}

@@ -51,7 +51,7 @@ const ActiveContributors = ({
       <CardContent className="flex flex-1 flex-col justify-between gap-4 p-6 pt-4">
         {/* Count */}
         <div>
-          <div className="text-5xl font-bold text-[#42b983] dark:text-white tracking-tight">
+          <div className="text-5xl font-bold text-[#50B78B] dark:text-white tracking-tight">
             {count}
           </div>
           <p className="text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-2">

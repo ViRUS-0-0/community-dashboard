@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 body::selection {
-  background-color: #22c55e4d;
+  background-color: #50B78B4d;
 }
 
 @custom-variant dark (&:is(.dark *));

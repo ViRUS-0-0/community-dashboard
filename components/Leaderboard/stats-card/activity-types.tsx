@@ -22,10 +22,10 @@ export const ActivityTypes = ({
   totalActivities,
 }: ActivityTypesProps) => {
   const { theme } = useTheme();
-  const [mainColor, setMainColor] = useState("#42b983");
+  const [mainColor, setMainColor] = useState("#50B78B");
 
   useEffect(() => {
-    setMainColor(theme === "dark" ? "#22c55e" : "#42b983");
+    setMainColor(theme === "dark" ? "#50B78B" : "#50B78B");
   }, [theme]);
 
   const data = [

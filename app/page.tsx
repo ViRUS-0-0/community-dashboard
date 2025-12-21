@@ -44,7 +44,7 @@ export default async function Home() {
     <div className="min-h-screen bg-zinc-50 dark:bg-black transition-colors">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-10 space-y-14">
         <section className="text-center space-y-4">
-          <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-teal-400 via-emerald-400 to-lime-400
+          <h1 className="text-5xl sm:text-5xl lg:text-7xl font-bold tracking-tight bg-clip-text text-transparent bg-linear-to-r from-[#50B78B] via-[#60C79B] to-[#70D7AB]
 ">
             {config.org.name}
           </h1>
@@ -71,12 +71,12 @@ export default async function Home() {
 
         <section className="space-y-6 max-w-5xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-            <h2 className="text-xl sm:text-2xl font-bold text-emerald-500">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#50B78B]">
               Recent Activities
             </h2>
             <Link
               href="/leaderboard"
-              className="flex items-center gap-2 text-sm font-medium text-emerald-600 hover:underline"
+              className="flex items-center gap-2 text-sm font-medium text-[#50B78B] hover:underline"
             >
               View Leaderboard
               <ArrowRight className="h-4 w-4" />
@@ -93,7 +93,7 @@ export default async function Home() {
                 <div key={group.activity_definition} className="space-y-3 select-none">
                   <div className="flex items-center justify-between px-1">
                     <div className="flex items-center gap-2">
-                      <span className="h-2 w-2 rounded-full bg-emerald-500" />
+                      <span className="h-2 w-2 rounded-full bg-[#50B78B]" />
                       <h3 className="text-xs uppercase tracking-wider text-zinc-500">
                         {group.activity_name}
                       </h3>
@@ -110,7 +110,7 @@ export default async function Home() {
                           key={activity.slug}
                           className="group relative flex items-center gap-3 sm:gap-4 p-3 sm:p-4 hover:bg-zinc-50 dark:hover:bg-white/5 transition"
                         >
-                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 opacity-0 group-hover:opacity-100 transition" />
+                          <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#50B78B] opacity-0 group-hover:opacity-100 transition" />
 
                           <Avatar className="h-9 w-9 sm:h-10 sm:w-10 shrink-0">
                             <AvatarImage
@@ -133,7 +133,7 @@ export default async function Home() {
                               <Link
                                 href={activity.link ?? "#"}
                                 target="_blank"
-                                className="opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400 hover:text-emerald-500 p-1"
+                                className="opacity-0 group-hover:opacity-100 transition-opacity text-zinc-400 hover:text-[#50B78B] p-1"
                               >
                                 <ArrowUpRight className="h-4 w-4" />
                               </Link>
@@ -159,7 +159,7 @@ export default async function Home() {
 
                           {(activity.points ?? 0) > 0 && (
                             <div className="flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold bg-zinc-100 dark:bg-zinc-800">
-                              <Sparkles className="h-3 w-3 text-emerald-500" />
+                              <Sparkles className="h-3 w-3 text-[#50B78B]" />
                               {activity.points}
                             </div>
                           )}

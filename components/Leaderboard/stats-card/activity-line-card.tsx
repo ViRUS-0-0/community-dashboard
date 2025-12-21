@@ -43,7 +43,7 @@ export function ActivityLineCard({
   week4,
 }: ActivityLineCardProps) {
   const { theme } = useTheme();
-  const [lineColor, setLineColor] = useState("#42b983");
+  const [lineColor, setLineColor] = useState("#50B78B");
   const [axisColor, setAxisColor] = useState("#71717a");
 
   const formattedTotal = new Intl.NumberFormat(
@@ -83,10 +83,10 @@ export function ActivityLineCard({
 
   useEffect(() => {
     if (theme === "dark") {
-      setLineColor("#22c55e");
+      setLineColor("#50B78B");
       setAxisColor("#a1a1aa");
     } else {
-      setLineColor("#42b983");
+      setLineColor("#50B78B");
       setAxisColor("#71717a");
     }
   }, [theme]);
@@ -146,7 +146,7 @@ export function ActivityLineCard({
               Total Activities
             </p>
           </div>
-          <h2 className="mt-2 text-5xl font-bold text-[#42b983] dark:text-white tracking-tight">
+          <h2 className="mt-2 text-5xl font-bold text-[#50B78B] dark:text-white tracking-tight">
             {formattedTotal}
           </h2>
           <p className="mt-2 text-sm font-medium text-zinc-500 dark:text-zinc-400">
@@ -161,7 +161,7 @@ export function ActivityLineCard({
     inline-flex items-center rounded-full px-3 py-1 text-sm font-semibold
     ${
       isUp
-        ? "bg-emerald-500/20 text-emerald-400"
+        ? "bg-[#50B78B]/20 text-[#50B78B]"
         : isDown
         ? "bg-rose-500/20 text-rose-400"
         : "bg-zinc-500/20 text-zinc-400"

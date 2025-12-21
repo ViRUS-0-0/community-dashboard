@@ -178,13 +178,13 @@ export default function LeaderboardView({
   const getRankIcon = (rank: number) => {
     if (rank === 1)
       return (
-        <Trophy className="h-6 w-6 text-yellow-500" aria-label="1st place" />
+        <Trophy className="h-6 w-6 text-[#FFD700]" aria-label="1st place" />
       );
     if (rank === 2)
-      return <Medal className="h-6 w-6 text-gray-400" aria-label="2nd place" />;
+      return <Medal className="h-6 w-6 text-[#C0C0C0]" aria-label="2nd place" />;
     if (rank === 3)
       return (
-        <Medal className="h-6 w-6 text-amber-600" aria-label="3rd place" />
+        <Medal className="h-6 w-6 text-[#CD7F32]/70" aria-label="3rd place" />
       );
     return null;
   };
@@ -247,7 +247,7 @@ export default function LeaderboardView({
                           <Filter className="h-4 w-4 mr-2" />
                           Role
                           {selectedRoles.size > 0 && (
-                            <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-primary text-primary-foreground">
+                            <span className="ml-1 px-1.5 py-0.5 text-xs rounded-full bg-[#50B78B] text-white">
                               {selectedRoles.size}
                             </span>
                           )}
@@ -294,8 +294,8 @@ export default function LeaderboardView({
               className={cn(
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "week"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  ? "border-[#50B78B] text-[#50B78B]"
+                  : "border-transparent text-muted-foreground hover:text-[#50B78B]"
               )}
             >
               Week
@@ -305,8 +305,8 @@ export default function LeaderboardView({
               className={cn(
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "month"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  ? "border-[#50B78B] text-[#50B78B]"
+                  : "border-transparent text-muted-foreground hover:text-[#50B78B]"
               )}
             >
               Month
@@ -316,8 +316,8 @@ export default function LeaderboardView({
               className={cn(
                 "px-4 py-2 font-medium transition-colors border-b-2",
                 period === "year"
-                  ? "border-primary text-primary"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
+                  ? "border-[#50B78B] text-[#50B78B]"
+                  : "border-transparent text-muted-foreground hover:text-[#50B78B]"
               )}
             >
               Year
@@ -344,7 +344,7 @@ export default function LeaderboardView({
                     key={entry.username}
                     className={cn(
                       "transition-all hover:shadow-md",
-                      isTopThree && "border-primary/50"
+                      isTopThree && "border-[#50B78B]/50"
                     )}
                   >
                     <CardContent>
@@ -352,7 +352,7 @@ export default function LeaderboardView({
                         {/* Rank */}
                         <div className="flex items-center justify-center size-12 shrink-0">
                           {getRankIcon(rank) || (
-                            <span className="text-2xl font-bold text-muted-foreground">
+                            <span className="text-2xl font-bold text-[#50B78B]">
                               {rank}
                             </span>
                           )}
@@ -375,19 +375,19 @@ export default function LeaderboardView({
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap mb-1">
                             <Link href={`/${entry.username}`}>
-                              <h3 className="text-lg font-semibold hover:text-primary transition-colors">
+                              <h3 className="text-lg font-semibold hover:text-[#50B78B] transition-colors">
                                 {entry.name || entry.username}
                               </h3>
                             </Link>
                             {entry.role && (
-                              <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary">
+                              <span className="text-xs px-2 py-1 rounded-full bg-[#50B78B]/10 text-[#50B78B]">
                                 {entry.role}
                               </span>
                             )}
                           </div>
                           <Link
                             href={`/${entry.username}`}
-                            className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                            className="text-sm text-muted-foreground hover:text-[#50B78B] transition-colors"
                           >
                             @{entry.username}
                           </Link>
@@ -409,7 +409,7 @@ export default function LeaderboardView({
                                     {data.count}
                                   </span>
                                   {data.points > 0 && (
-                                    <span className="text-primary ml-1">
+                                    <span className="text-[#50B78B] ml-1">
                                       (+{data.points})
                                     </span>
                                   )}
@@ -431,7 +431,7 @@ export default function LeaderboardView({
                               />
                             )}
                           <div className="text-right">
-                            <div className="text-3xl font-bold text-primary">
+                            <div className="text-3xl font-bold text-[#50B78B]">
                               {entry.total_points}
                             </div>
                             <div className="text-xs text-muted-foreground">
@@ -472,13 +472,13 @@ export default function LeaderboardView({
                             >
                               <div className="flex items-center justify-center w-5 h-5 shrink-0">
                                 {index === 0 && (
-                                  <Trophy className="h-4 w-4 text-yellow-500" />
+                                  <Trophy className="h-4 w-4 text-[#50B78B]" />
                                 )}
                                 {index === 1 && (
-                                  <Medal className="h-4 w-4 text-gray-400" />
+                                  <Medal className="h-4 w-4 text-zinc-400" />
                                 )}
                                 {index === 2 && (
-                                  <Medal className="h-4 w-4 text-amber-600" />
+                                  <Medal className="h-4 w-4 text-[#50B78B]/70" />
                                 )}
                               </div>
                               <Avatar className="h-9 w-9 shrink-0 border">
@@ -493,7 +493,7 @@ export default function LeaderboardView({
                                 </AvatarFallback>
                               </Avatar>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium truncate group-hover:text-primary transition-colors leading-tight">
+                                <p className="text-sm font-medium truncate group-hover:text-[#50B78B] transition-colors leading-tight">
                                   {contributor.name || contributor.username}
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-0.5">
