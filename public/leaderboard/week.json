@@ -1,6 +1,6 @@
 {
   "period": "week",
-  "updatedAt": 1766341191829,
+  "updatedAt": 1766356356588,
   "startDate": "2025-12-14",
   "endDate": "2025-12-21",
   "hiddenRoles": [],
@@ -308,40 +308,6 @@
       ]
     },
     {
-      "username": "SuyashJain17",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/153724685?v=4",
-      "role": "Contributor",
-      "total_points": 4,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        },
-        "Issue opened": {
-          "count": 2,
-          "points": 2
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-14",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-14",
-          "count": 1,
-          "points": 1
-        },
-        {
-          "date": "2025-12-14",
-          "count": 1,
-          "points": 1
-        }
-      ]
-    },
-    {
       "username": "Varshad-Potle",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/205039168?v=4",
@@ -394,6 +360,35 @@
         },
         {
           "date": "2025-12-19",
+          "count": 1,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "username": "SuyashJain17",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/153724685?v=4",
+      "role": "Contributor",
+      "total_points": 3,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        },
+        "Issue opened": {
+          "count": 1,
+          "points": 1
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-14",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-14",
           "count": 1,
           "points": 1
         }
@@ -1070,17 +1065,6 @@
       "occured_at": "2025-12-14T22:38:41Z",
       "points": 1,
       "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6469",
-      "contributor": "SuyashJain17",
-      "contributor_name": "SuyashJain17",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/153724685?v=4"
-    },
-    {
-      "slug": "issue-opened-3728109814",
-      "type": "Issue opened",
-      "title": "🐞 Notification bell icon missing aria-label in navbar",
-      "occured_at": "2025-12-14T22:15:10Z",
-      "points": 1,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6468",
       "contributor": "SuyashJain17",
       "contributor_name": "SuyashJain17",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/153724685?v=4"
