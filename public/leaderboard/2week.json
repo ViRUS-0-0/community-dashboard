@@ -1,6 +1,6 @@
 {
   "period": "2week",
-  "updatedAt": 1766365799590,
+  "updatedAt": 1766384685742,
   "startDate": "2025-12-08",
   "endDate": "2025-12-22",
   "hiddenRoles": [],
@@ -157,40 +157,6 @@
       ]
     },
     {
-      "username": "ghanshyam2005singh",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
-      "role": "Contributor",
-      "total_points": 12,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        },
-        "PR merged": {
-          "count": 2,
-          "points": 10
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-09",
-          "count": 1,
-          "points": 2
-        },
-        {
-          "date": "2025-12-09",
-          "count": 1,
-          "points": 5
-        },
-        {
-          "date": "2025-12-08",
-          "count": 1,
-          "points": 5
-        }
-      ]
-    },
-    {
       "username": "Teesta-Mukherjee",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/168867474?v=4",
@@ -332,6 +298,35 @@
       ]
     },
     {
+      "username": "ghanshyam2005singh",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4",
+      "role": "Contributor",
+      "total_points": 7,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        },
+        "PR merged": {
+          "count": 1,
+          "points": 5
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-09",
+          "count": 1,
+          "points": 2
+        },
+        {
+          "date": "2025-12-09",
+          "count": 1,
+          "points": 5
+        }
+      ]
+    },
+    {
       "username": "Radhikaa-chauhan",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/148184013?v=4",
@@ -440,26 +435,6 @@
           "date": "2025-12-16",
           "count": 1,
           "points": 1
-        }
-      ]
-    },
-    {
-      "username": "salmoneatenbybear",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/177742943?v=4",
-      "role": "Contributor",
-      "total_points": 5,
-      "activity_breakdown": {
-        "PR merged": {
-          "count": 1,
-          "points": 5
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-08",
-          "count": 1,
-          "points": 5
         }
       ]
     },
@@ -1744,28 +1719,6 @@
       "contributor": "senutpal",
       "contributor_name": "senutpal",
       "contributor_avatar_url": "https://avatars.githubusercontent.com/u/168703537?v=4"
-    },
-    {
-      "slug": "pr-merged-3703519286",
-      "type": "PR Merged",
-      "title": "chore: About page members restructuring",
-      "closed_at": "2025-12-08T03:43:45Z",
-      "points": 5,
-      "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6444",
-      "contributor": "salmoneatenbybear",
-      "contributor_name": "salmoneatenbybear",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/177742943?v=4"
-    },
-    {
-      "slug": "pr-merged-3703224271",
-      "type": "PR Merged",
-      "title": "docs: update README with Docusaurus setup instructions (#442)",
-      "closed_at": "2025-12-08T03:46:39Z",
-      "points": 5,
-      "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/443",
-      "contributor": "ghanshyam2005singh",
-      "contributor_name": "ghanshyam2005singh",
-      "contributor_avatar_url": "https://avatars.githubusercontent.com/u/56252619?v=4"
     },
     {
       "slug": "pr-merged-3699884991",
