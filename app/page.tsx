@@ -76,7 +76,7 @@ export default async function Home() {
             </h2>
             <Link
               href="/leaderboard"
-              className="flex items-center gap-2 text-sm font-medium text-[#50B78B] hover:underline"
+              className="flex items-center gap-2 text-sm font-medium text-[#50B78B]"
             >
               View Leaderboard
               <ArrowRight className="h-4 w-4" />

@@ -175,11 +175,7 @@ body::selection {
 }
 
 a {
-  @apply text-primary hover:underline hover:text-primary/80;
-}
-
-.prose a {
-  @apply underline;
+  @apply text-primary hover:text-primary/80;
 }
 
 /* Activity Graph Fade-in Animation */
