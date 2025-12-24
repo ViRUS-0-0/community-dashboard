@@ -47,7 +47,7 @@ const Navbar = ({ config }: NavbarProps) => {
           </Link>
 
           {/* Nav Links */}
-          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border bg-background/90 backdrop-blur shadow-sm px-2 py-1">
+          <nav className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-1 rounded-full border bg-background/90 backdrop-blur shadow-sm">
             {navItems.map((item) => {
               const active = isActive(item.href);
 
