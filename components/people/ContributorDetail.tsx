@@ -87,7 +87,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
   const maxActivityPoints = Math.max(...sortedActivities.map(([, data]) => data.points), 1);
   const recentContributions = contributor.activities?.slice(0, 15) || [];
 
-  // Calculate activity distribution for this month
   const thisMonth = new Date();
   const monthlyActivity = recentActivity.filter(day => {
     const dayDate = new Date(day.date);
@@ -100,13 +99,12 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
 
   return (
     <div className="mx-auto px-4 py-8 max-w-7xl">
-      <Button onClick={onBack} variant="outline" className="mb-6 hover:bg-primary hover:text-primary-foreground transition-colors">
+      <Button onClick={onBack} variant="outline" className="mb-6 hover:bg-primary cursor-pointer transition-colors">
         <ArrowLeft className="w-4 h-4 mr-2" />
         Back to People
       </Button>
       
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Profile Card */}
         <div className="lg:col-span-1">
           <Card className="sticky top-4 bg-gradient-to-br from-background via-background to-muted/20 shadow-lg border-0 ring-1 ring-border">
             <CardContent className="p-6">
@@ -139,30 +137,29 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                   </Badge>
                 </div>
 
-                {/* Quick Stats Grid */}
                 <div className="w-full grid grid-cols-2 gap-3">
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-yellow-50 via-yellow-50 to-yellow-100 dark:from-yellow-950 dark:to-yellow-900 border border-yellow-200 dark:border-yellow-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-yellow-50 via-yellow-50 to-yellow-100 dark:from-yellow-400 dark:to-yellow-300 border border-yellow-200 dark:border-yellow-800">
                     <Trophy className="w-6 h-6 text-yellow-600 mb-2" />
-                    <span className="font-bold text-xl text-yellow-700 dark:text-yellow-300">{contributor.total_points || 0}</span>
-                    <span className="text-xs text-yellow-600 dark:text-yellow-400 text-center font-medium">Total Points</span>
+                    <span className="font-bold text-xl text-yellow-700">{contributor.total_points || 0}</span>
+                    <span className="text-xs text-yellow-600 text-center font-medium">Total Points</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border border-blue-200 dark:border-blue-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-50 via-blue-50 to-blue-100 dark:from-blue-400 dark:to-blue-300 border border-blue-200 dark:border-blue-800">
                     <Calendar className="w-6 h-6 text-blue-600 mb-2" />
-                    <span className="font-bold text-xl text-blue-700 dark:text-blue-300">{totalDaysActive}</span>
-                    <span className="text-xs text-blue-600 dark:text-blue-400 text-center font-medium">Active Days</span>
+                    <span className="font-bold text-xl text-blue-700">{totalDaysActive}</span>
+                    <span className="text-xs text-blue-600 text-center font-medium">Active Days</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-50 via-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border border-green-200 dark:border-green-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-green-50 via-green-50 to-green-100 dark:from-green-400 dark:to-green-300 border border-green-200 dark:border-green-800">
                     <TrendingUp className="w-6 h-6 text-green-600 mb-2" />
-                    <span className="font-bold text-xl text-green-700 dark:text-green-300">{currentStreak}</span>
-                    <span className="text-xs text-green-600 dark:text-green-400 text-center font-medium">Day Streak</span>
+                    <span className="font-bold text-xl text-green-700">{currentStreak}</span>
+                    <span className="text-xs text-green-600 text-center font-medium">Day Streak</span>
                   </div>
                   
-                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-50 via-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border border-purple-200 dark:border-purple-800">
+                  <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-purple-50 via-purple-50 to-purple-100 dark:from-purple-400 dark:to-purple-300 border border-purple-200 dark:border-purple-800">
                     <Target className="w-6 h-6 text-purple-600 mb-2" />
-                    <span className="font-bold text-xl text-purple-700 dark:text-purple-300">{averagePointsPerDay}</span>
-                    <span className="text-xs text-purple-600 dark:text-purple-400 text-center font-medium">Avg/Day</span>
+                    <span className="font-bold text-xl text-purple-700">{averagePointsPerDay}</span>
+                    <span className="text-xs text-purple-600 text-center font-medium">Avg/Day</span>
                   </div>
                 </div>
 
@@ -171,7 +168,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                   target="_blank" 
                   className="w-full mt-4"
                 >
-                  <Button className="w-full bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
+                  <Button className="w-full bg-gradient-to-r cursor-pointer from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
                     <ExternalLink className="w-4 h-4 mr-2" />
                     View GitHub Profile
                   </Button>
@@ -181,9 +178,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
           </Card>
         </div>
 
-        {/* Main Content */}
         <div className="lg:col-span-3 space-y-8">
-          {/* Monthly Summary */}
           <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
@@ -213,7 +208,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             </CardContent>
           </Card>
 
-          {/* Activity Breakdown */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -238,18 +232,12 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                       </div>
                       <div className="space-y-3">
                         <div className="flex justify-between items-center">
-                          <span className="text-sm font-medium">Progress</span>
+                          <span className="text-sm font-medium">Activity</span>
                           <span className="font-bold text-lg text-primary">{data.points} points</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
-                          <div 
-                            className="bg-gradient-to-r from-primary via-primary to-primary/80 h-3 rounded-full transition-all duration-700 ease-out"
-                            style={{ width: `${percentage}%` }}
-                          />
                         </div>
                         <div className="flex justify-between text-xs text-muted-foreground">
                           <span>{Math.round(data.points / data.count)} avg points</span>
-                          <span>{percentage}% of max</span>
+                          <span>{data.count} {data.count === 1 ? 'contribution' : 'contributions'}</span>
                         </div>
                       </div>
                     </div>
@@ -259,7 +247,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             </CardContent>
           </Card>
 
-          {/* Recent Contributions */}
           {recentContributions.length > 0 && (
             <Card>
               <CardHeader>
@@ -346,7 +333,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             </Card>
           )}
 
-          {/* Daily Activity Timeline */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">

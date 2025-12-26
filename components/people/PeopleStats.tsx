@@ -88,75 +88,69 @@ export function PeopleStats({ contributors, onContributorClick }: PeopleStatsPro
 
   return (
     <div className="space-y-8">
-      {/* Main Stats */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {/* Total Contributors */}
-        <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-blue-100 dark:bg-blue-900 rounded-xl shadow-sm">
-                <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Total Contributors</p>
-                <p className="text-2xl font-bold text-blue-700 dark:text-blue-300">{totalContributors}</p>
-                <p className="text-xs text-blue-600/80 dark:text-blue-400/80">Active community</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Total Points */}
-        <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-950 dark:to-yellow-900 border-yellow-200 dark:border-yellow-800">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3">
-              <div className="p-3 bg-yellow-100 dark:bg-yellow-900 rounded-xl shadow-sm">
-                <Trophy className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
-              </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Total Points</p>
-                <p className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">{totalPoints.toLocaleString()}</p>
-                <p className="text-xs text-yellow-600/80 dark:text-yellow-400/80">Community effort</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Average Points */}
         <Card className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-950 dark:to-green-900 border-green-200 dark:border-green-800">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
               <div className="p-3 bg-green-100 dark:bg-green-900 rounded-xl shadow-sm">
-                <Target className="w-6 h-6 text-green-600 dark:text-green-400" />
+                <Users className="w-6 h-6 text-green-600 dark:text-green-400" />
               </div>
               <div>
-                <p className="text-sm text-muted-foreground">Avg Points</p>
-                <p className="text-2xl font-bold text-green-700 dark:text-green-300">{averagePoints}</p>
-                <p className="text-xs text-green-600/80 dark:text-green-400/80">Per contributor</p>
+                <p className="text-sm text-muted-foreground">Total Contributors</p>
+                <p className="text-2xl font-bold text-green-700 dark:text-green-300">{totalContributors}</p>
+                <p className="text-xs text-green-600/80 dark:text-green-400/80">Active community</p>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Recently Active */}
-        <Card className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-950 dark:to-purple-900 border-purple-200 dark:border-purple-800">
+        <Card className="bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-950 dark:to-emerald-900 border-emerald-200 dark:border-emerald-800">
           <CardContent className="p-6">
             <div className="flex items-center gap-3">
-              <div className="p-3 bg-purple-100 dark:bg-purple-900 rounded-xl shadow-sm">
-                <TrendingUp className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+              <div className="p-3 bg-emerald-100 dark:bg-emerald-900 rounded-xl shadow-sm">
+                <Trophy className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Total Points</p>
+                <p className="text-2xl font-bold text-emerald-700 dark:text-emerald-300">{totalPoints.toLocaleString()}</p>
+                <p className="text-xs text-emerald-600/80 dark:text-emerald-400/80">Community effort</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-gradient-to-br from-teal-50 to-teal-100 dark:from-teal-950 dark:to-teal-900 border-teal-200 dark:border-teal-800">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3">
+              <div className="p-3 bg-teal-100 dark:bg-teal-900 rounded-xl shadow-sm">
+                <Target className="w-6 h-6 text-teal-600 dark:text-teal-400" />
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Avg Points</p>
+                <p className="text-2xl font-bold text-teal-700 dark:text-teal-300">{averagePoints}</p>
+                <p className="text-xs text-teal-600/80 dark:text-teal-400/80">Per contributor</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="bg-gradient-to-br from-lime-50 to-lime-100 dark:from-lime-950 dark:to-lime-900 border-lime-200 dark:border-lime-800">
+          <CardContent className="p-6">
+            <div className="flex items-center gap-3">
+              <div className="p-3 bg-lime-100 dark:bg-lime-900 rounded-xl shadow-sm">
+                <TrendingUp className="w-6 h-6 text-lime-600 dark:text-lime-400" />
               </div>
               <div>
                 <p className="text-sm text-muted-foreground">Active This Week</p>
-                <p className="text-2xl font-bold text-purple-700 dark:text-purple-300">{recentlyActive}</p>
-                <p className="text-xs text-purple-600/80 dark:text-purple-400/80">{Math.round((recentlyActive/totalContributors)*100)}% of community</p>
+                <p className="text-2xl font-bold text-lime-700 dark:text-lime-300">{recentlyActive}</p>
+                <p className="text-xs text-lime-600/80 dark:text-lime-400/80">{Math.round((recentlyActive/totalContributors)*100)}% of community</p>
               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-1 gap-8">
-        {/* Top Contributors */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -205,63 +199,61 @@ export function PeopleStats({ contributors, onContributorClick }: PeopleStatsPro
             </div>
           </CardContent>
         </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Activity className="w-5 h-5" />
+              Activity Overview
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="text-center p-4 bg-muted/30 rounded-lg">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{totalActivities.toLocaleString()}</div>
+                <div className="text-sm text-muted-foreground">Total Activities</div>
+              </div>
+              <div className="text-center p-4 bg-muted/30 rounded-lg">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{averageActiveDays}</div>
+                <div className="text-sm text-muted-foreground">Avg Active Days</div>
+              </div>
+              <div className="text-center p-4 bg-muted/30 rounded-lg">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{Math.round(totalActivities / totalContributors)}</div>
+                <div className="text-sm text-muted-foreground">Avg Activities</div>
+              </div>
+              <div className="text-center p-4 bg-muted/30 rounded-lg">
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400">{Math.round((recentlyActive / totalContributors) * 100)}%</div>
+                <div className="text-sm text-muted-foreground">Weekly Active Rate</div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {topActivityTypes.map(([type, data]) => {
+                const getActivityIcon = (activityType: string) => {
+                  const typeStr = activityType.toLowerCase();
+                  if (typeStr.includes('commit')) return <GitCommit className="w-4 h-4" />;
+                  if (typeStr.includes('pr') || typeStr.includes('pull')) return <GitPullRequest className="w-4 h-4" />;
+                  if (typeStr.includes('issue')) return <Activity className="w-4 h-4" />;
+                  return <Activity className="w-4 h-4" />;
+                };
+
+                return (
+                  <div key={type} className="p-3 border rounded-lg bg-gradient-to-br from-background to-muted/30">
+                    <div className="flex items-center gap-2 mb-2">
+                      {getActivityIcon(type)}
+                      <span className="font-medium text-sm truncate">{type}</span>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-lg font-bold text-green-600 dark:text-green-400">{data.count}</div>
+                      <div className="text-xs text-muted-foreground">{data.points} total points</div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </CardContent>
+        </Card>
       </div>
-
-      {/* Activity Overview */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Activity className="w-5 h-5" />
-            Activity Overview
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
-            <div className="text-center p-4 bg-muted/30 rounded-lg">
-              <div className="text-2xl font-bold text-primary">{totalActivities.toLocaleString()}</div>
-              <div className="text-sm text-muted-foreground">Total Activities</div>
-            </div>
-            <div className="text-center p-4 bg-muted/30 rounded-lg">
-              <div className="text-2xl font-bold text-primary">{averageActiveDays}</div>
-              <div className="text-sm text-muted-foreground">Avg Active Days</div>
-            </div>
-            <div className="text-center p-4 bg-muted/30 rounded-lg">
-              <div className="text-2xl font-bold text-primary">{Math.round(totalActivities / totalContributors)}</div>
-              <div className="text-sm text-muted-foreground">Avg Activities</div>
-            </div>
-            <div className="text-center p-4 bg-muted/30 rounded-lg">
-              <div className="text-2xl font-bold text-primary">{Math.round((recentlyActive / totalContributors) * 100)}%</div>
-              <div className="text-sm text-muted-foreground">Weekly Active Rate</div>
-            </div>
-          </div>
-
-          {/* Top Activity Types */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {topActivityTypes.map(([type, data]) => {
-              const getActivityIcon = (activityType: string) => {
-                const typeStr = activityType.toLowerCase();
-                if (typeStr.includes('commit')) return <GitCommit className="w-4 h-4" />;
-                if (typeStr.includes('pr') || typeStr.includes('pull')) return <GitPullRequest className="w-4 h-4" />;
-                if (typeStr.includes('issue')) return <Activity className="w-4 h-4" />;
-                return <Activity className="w-4 h-4" />;
-              };
-
-              return (
-                <div key={type} className="p-3 border rounded-lg bg-gradient-to-br from-background to-muted/30">
-                  <div className="flex items-center gap-2 mb-2">
-                    {getActivityIcon(type)}
-                    <span className="font-medium text-sm truncate">{type}</span>
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-lg font-bold text-primary">{data.count}</div>
-                    <div className="text-xs text-muted-foreground">{data.points} total points</div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

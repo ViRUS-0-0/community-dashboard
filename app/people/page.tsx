@@ -55,7 +55,6 @@ export default function PeoplePage() {
   const [error, setError] = useState<string | null>(null);
   const [filters, setFilters] = useState<FilterState>({
     search: '',
-    role: 'all',
     sortBy: 'points',
     sortOrder: 'desc',
     minPoints: 0,
@@ -82,7 +81,7 @@ export default function PeoplePage() {
   }, []);
 
   const filteredContributors = useMemo(() => {
-    let filtered = people;
+    let filtered = [...people]; 
 
     if (filters.search) {
       const searchLower = filters.search.toLowerCase();
@@ -91,10 +90,6 @@ export default function PeoplePage() {
         c.username.toLowerCase().includes(searchLower) ||
         c.role.toLowerCase().includes(searchLower)
       );
-    }
-
-    if (filters.role !== 'all') {
-      filtered = filtered.filter(c => c.role === filters.role);
     }
 
     if (filters.minPoints > 0) {
@@ -133,6 +128,11 @@ export default function PeoplePage() {
     setFilters(prev => ({ ...prev, viewMode }));
   };
 
+  const handleContributorClick = (contributor: ContributorEntry) => {
+    setSelectedContributor(contributor);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   if (selectedContributor) {
     return (
       <ContributorDetail 
@@ -163,7 +163,7 @@ export default function PeoplePage() {
   return (
     <div className="mx-auto px-4 py-8 max-w-7xl">
       <div className="mb-8 text-center">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-600 to-emerald-500 dark:from-green-400 dark:to-emerald-300 bg-clip-text text-transparent">
           Our People
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-4">
@@ -207,7 +207,7 @@ export default function PeoplePage() {
           </Card>
 
           <div className="text-center py-16">
-            <Loader2 className="w-12 h-12 animate-spin mx-auto mb-4 text-primary" />
+            <Loader2 className="w-12 h-12 animate-spin mx-auto mb-4 text-green-600 dark:text-green-400" />
             <h3 className="text-lg font-semibold mb-2">Loading Contributors</h3>
             <p className="text-muted-foreground">Fetching community data...</p>
           </div>
@@ -216,7 +216,7 @@ export default function PeoplePage() {
         <>
           <PeopleStats 
           contributors={people} 
-          onContributorClick={setSelectedContributor}
+          onContributorClick={handleContributorClick}
         />
 
           <SearchFilter
@@ -254,7 +254,7 @@ export default function PeoplePage() {
 
           <PeopleGrid
             contributors={filteredContributors}
-            onContributorClick={setSelectedContributor}
+            onContributorClick={handleContributorClick}
             viewMode={filters.viewMode}
             loading={false}
           />

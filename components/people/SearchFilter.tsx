@@ -41,7 +41,6 @@ interface ContributorEntry {
 
 export interface FilterState {
   search: string;
-  role: string;
   sortBy: 'name' | 'points' | 'recent' | 'activity';
   sortOrder: 'asc' | 'desc';
   minPoints: number;
@@ -63,12 +62,8 @@ export function SearchFilter({
 }: SearchFilterProps) {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  const roles = Array.from(new Set(contributors.map(c => c.role).filter(Boolean)))
-    .sort();
-
   const activeFiltersCount = [
     filters.search,
-    filters.role !== 'all',
     filters.minPoints > 0,
     filters.sortBy !== 'points' || filters.sortOrder !== 'desc'
   ].filter(Boolean).length;
@@ -83,7 +78,6 @@ export function SearchFilter({
   const clearFilters = () => {
     onFiltersChange({
       search: '',
-      role: 'all',
       sortBy: 'points',
       sortOrder: 'desc',
       minPoints: 0,
@@ -96,9 +90,9 @@ export function SearchFilter({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-2 mt-4 mb-4">
       <Card className="shadow-sm">
-        <CardContent className="p-4">
+        <CardContent className="px-4 py-3">
           <div className="flex flex-col sm:flex-row gap-4">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
@@ -182,7 +176,7 @@ export function SearchFilter({
                   {activeFiltersCount > 0 && (
                     <Badge 
                       variant="secondary" 
-                      className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs bg-primary text-primary-foreground"
+                      className="absolute -top-2 -right-2 h-5 w-5 p-0 flex items-center justify-center text-xs bg-green-600 dark:bg-green-500 text-white border-green-700 dark:border-green-400"
                     >
                       {activeFiltersCount}
                     </Badge>
@@ -205,28 +199,7 @@ export function SearchFilter({
                     )}
                   </div>
 
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Role</label>
-                    <Select
-                      value={filters.role}
-                      onValueChange={(value) => handleFilterChange('role', value)}
-                    >
-                      <SelectTrigger>
-                        <SelectValue />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">All Roles ({contributors.length})</SelectItem>
-                        {roles.map(role => {
-                          const count = contributors.filter(c => c.role === role).length;
-                          return (
-                            <SelectItem key={role} value={role}>
-                              {role} ({count})
-                            </SelectItem>
-                          );
-                        })}
-                      </SelectContent>
-                    </Select>
-                  </div>
+
 
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Minimum Points</label>
@@ -286,19 +259,7 @@ export function SearchFilter({
                   </Button>
                 </Badge>
               )}
-              {filters.role !== 'all' && (
-                <Badge variant="secondary" className="gap-1">
-                  Role: {filters.role}
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleFilterChange('role', 'all')}
-                    className="h-auto w-auto p-0 ml-1 hover:bg-destructive hover:text-destructive-foreground rounded-full"
-                  >
-                    <X className="w-3 h-3" />
-                  </Button>
-                </Badge>
-              )}
+
               {filters.minPoints > 0 && (
                 <Badge variant="secondary" className="gap-1">
                   Min Points: {filters.minPoints}

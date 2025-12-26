@@ -36,7 +36,7 @@ export async function GET() {
           latestUpdatedAt = data.updatedAt;
         }
 
-        for (const entry of data.entries) {
+        for (const entry of data.entries || []) {
           if (entry.username.includes('[bot]') || 
               entry.username.includes('bot') || 
               entry.username.includes('dependabot') ||
