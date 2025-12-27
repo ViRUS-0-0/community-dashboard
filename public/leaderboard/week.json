@@ -1,6 +1,6 @@
 {
   "period": "week",
-  "updatedAt": 1766838418467,
+  "updatedAt": 1766859663282,
   "startDate": "2025-12-20",
   "endDate": "2025-12-27",
   "hiddenRoles": [],
@@ -562,7 +562,7 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
       "role": "Contributor",
-      "total_points": 11,
+      "total_points": 12,
       "activity_breakdown": {
         "PR opened": {
           "count": 1,
@@ -573,8 +573,8 @@
           "points": 5
         },
         "Issue opened": {
-          "count": 4,
-          "points": 4
+          "count": 5,
+          "points": 5
         }
       },
       "daily_activity": [
@@ -582,6 +582,11 @@
           "date": "2025-12-25",
           "count": 5,
           "points": 10
+        },
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 1
         },
         {
           "date": "2025-12-26",
@@ -606,6 +611,16 @@
           "occured_at": "2025-12-25T19:21:27Z",
           "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/462",
           "points": 5,
+          "contributor": "naman79820",
+          "contributor_name": null,
+          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
+        },
+        {
+          "type": "Issue opened",
+          "title": "YouTube embed breaks layout on Chapter 3 Simulator Interface (Introduction)",
+          "occured_at": "2025-12-27T16:27:46Z",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/474",
+          "points": 1,
           "contributor": "naman79820",
           "contributor_name": null,
           "contributor_avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4"
@@ -771,52 +786,6 @@
           "contributor": "senutpal",
           "contributor_name": null,
           "contributor_avatar_url": "https://avatars.githubusercontent.com/u/168703537?v=4"
-        }
-      ]
-    },
-    {
-      "username": "Nihal4777",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4",
-      "role": "Contributor",
-      "total_points": 7,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 1,
-          "points": 2
-        },
-        "PR merged": {
-          "count": 1,
-          "points": 5
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-20",
-          "count": 2,
-          "points": 7
-        }
-      ],
-      "activities": [
-        {
-          "type": "PR opened",
-          "title": "chore - install netcat-openbsd and fix bundler setup in devcontainer",
-          "occured_at": "2025-12-20T14:33:59Z",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6490",
-          "points": 2,
-          "contributor": "Nihal4777",
-          "contributor_name": null,
-          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4"
-        },
-        {
-          "type": "PR merged",
-          "title": "chore - install netcat-openbsd and fix bundler setup in devcontainer",
-          "occured_at": "2025-12-20T15:00:57Z",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6490",
-          "points": 5,
-          "contributor": "Nihal4777",
-          "contributor_name": null,
-          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/65150640?v=4"
         }
       ]
     },
@@ -1306,48 +1275,6 @@
       ]
     },
     {
-      "username": "Agarwalchetan",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4",
-      "role": "Contributor",
-      "total_points": 4,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 2,
-          "points": 4
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2025-12-20",
-          "count": 2,
-          "points": 4
-        }
-      ],
-      "activities": [
-        {
-          "type": "PR opened",
-          "title": "Fixed Search Query Timeout Issue",
-          "occured_at": "2025-12-20T17:13:46Z",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6492",
-          "points": 2,
-          "contributor": "Agarwalchetan",
-          "contributor_name": null,
-          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4"
-        },
-        {
-          "type": "PR opened",
-          "title": "Fixed NoMethodError in NotifyUser Service",
-          "occured_at": "2025-12-20T15:15:22Z",
-          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6491",
-          "points": 2,
-          "contributor": "Agarwalchetan",
-          "contributor_name": null,
-          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/182099875?v=4"
-        }
-      ]
-    },
-    {
       "username": "ys748477-dotcom",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/235941943?v=4",
@@ -1575,6 +1502,70 @@
           "contributor": "sai-ganesh-1706",
           "contributor_name": null,
           "contributor_avatar_url": "https://avatars.githubusercontent.com/u/191041304?v=4"
+        }
+      ]
+    },
+    {
+      "username": "ViRUS-0-0",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/67628558?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 2
+        }
+      ],
+      "activities": [
+        {
+          "type": "PR opened",
+          "title": "Fix createPopper error by including Popper.js dependency",
+          "occured_at": "2025-12-27T12:47:01Z",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6510",
+          "points": 2,
+          "contributor": "ViRUS-0-0",
+          "contributor_name": null,
+          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/67628558?v=4"
+        }
+      ]
+    },
+    {
+      "username": "themradul07",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/171602531?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 2
+        }
+      ],
+      "activities": [
+        {
+          "type": "PR opened",
+          "title": "Issue #34 - Added filters",
+          "occured_at": "2025-12-27T12:31:51Z",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/35",
+          "points": 2,
+          "contributor": "themradul07",
+          "contributor_name": null,
+          "contributor_avatar_url": "https://avatars.githubusercontent.com/u/171602531?v=4"
         }
       ]
     },

@@ -1,6 +1,6 @@
 {
   "period": "year",
-  "updatedAt": 1766838418460,
+  "updatedAt": 1766859663275,
   "startDate": "2024-12-27",
   "endDate": "2025-12-27",
   "hiddenRoles": [],
@@ -6379,7 +6379,7 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
       "role": "Contributor",
-      "total_points": 79,
+      "total_points": 80,
       "activity_breakdown": {
         "PR opened": {
           "count": 22,
@@ -6390,8 +6390,8 @@
           "points": 20
         },
         "Issue opened": {
-          "count": 15,
-          "points": 15
+          "count": 16,
+          "points": 16
         }
       },
       "daily_activity": [
@@ -6509,6 +6509,11 @@
           "date": "2025-11-29",
           "count": 2,
           "points": 2
+        },
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 1
         },
         {
           "date": "2025-12-26",
@@ -6774,6 +6779,13 @@
           "occured_at": "2025-11-29T17:52:49Z",
           "title": "🐞 Bug - Illustration on Blog Page Overflows / Not Responsive at ~1200px Width",
           "link": "https://github.com/CircuitVerse/CircuitVerse/issues/6369",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2025-12-27T16:27:46Z",
+          "title": "YouTube embed breaks layout on Chapter 3 Simulator Interface (Introduction)",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/474",
           "points": 1
         },
         {
@@ -17401,6 +17413,64 @@
           "occured_at": "2025-11-23T13:46:45Z",
           "title": "#5442-fix - Move login button below reCAPTCHA",
           "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6361",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "username": "ViRUS-0-0",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/67628558?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 2
+        }
+      ],
+      "raw_activities": [
+        {
+          "type": "PR opened",
+          "occured_at": "2025-12-27T12:47:01Z",
+          "title": "Fix createPopper error by including Popper.js dependency",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6510",
+          "points": 2
+        }
+      ]
+    },
+    {
+      "username": "themradul07",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/171602531?v=4",
+      "role": "Contributor",
+      "total_points": 2,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 1,
+          "points": 2
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2025-12-27",
+          "count": 1,
+          "points": 2
+        }
+      ],
+      "raw_activities": [
+        {
+          "type": "PR opened",
+          "occured_at": "2025-12-27T12:31:51Z",
+          "title": "Issue #34 - Added filters",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/35",
           "points": 2
         }
       ]

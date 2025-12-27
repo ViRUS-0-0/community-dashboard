@@ -1,9 +1,17 @@
 {
-  "updatedAt": 1766838418489,
+  "updatedAt": 1766859663299,
   "groups": [
     {
       "date": "2025-12-27",
       "items": [
+        {
+          "username": "naman79820",
+          "name": null,
+          "title": "YouTube embed breaks layout on Chapter 3 Simulator Interface (Introduction)",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/474",
+          "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
+          "points": 1
+        },
         {
           "username": "Atharva7126",
           "name": null,
@@ -59,6 +67,22 @@
           "link": "https://github.com/CircuitVerse/community-dashboard/pull/33",
           "avatar_url": "https://avatars.githubusercontent.com/u/188013862?v=4",
           "points": 5
+        },
+        {
+          "username": "ViRUS-0-0",
+          "name": null,
+          "title": "Fix createPopper error by including Popper.js dependency",
+          "link": "https://github.com/CircuitVerse/CircuitVerse/pull/6510",
+          "avatar_url": "https://avatars.githubusercontent.com/u/67628558?v=4",
+          "points": 2
+        },
+        {
+          "username": "themradul07",
+          "name": null,
+          "title": "Issue #34 - Added filters",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/35",
+          "avatar_url": "https://avatars.githubusercontent.com/u/171602531?v=4",
+          "points": 2
         }
       ]
     },
