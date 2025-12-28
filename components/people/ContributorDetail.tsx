@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { GitHubHeatmap } from "@/components/people/GitHubHeatmap";
+import { useState } from "react";
 import { 
-  ExternalLink, 
   Activity, 
   Calendar, 
   GitCommit, 
@@ -18,7 +19,9 @@ import {
   GitPullRequest,
   Bug,
   ArrowLeft,
-  Target
+  Target,
+  Github,
+  ExternalLink
 } from "lucide-react";
 
 interface ContributorEntry {
@@ -44,6 +47,9 @@ interface ContributorDetailProps {
 }
 
 export function ContributorDetail({ contributor, onBack }: ContributorDetailProps) {
+  // Initialize current time directly for simple use case
+  const [currentTime] = useState(() => Date.now());
+
   const getActivityIcon = (activityType: string) => {
     const type = activityType.toLowerCase();
     if (type.includes('commit')) return <GitCommit className="w-4 h-4" />;
@@ -87,7 +93,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
     }
   }
 
-  const maxActivityPoints = Math.max(...sortedActivities.map(([, data]) => data.points), 1);
   const recentContributions = contributor.activities?.slice(0, 15) || [];
 
   const thisMonth = new Date();
@@ -169,11 +174,10 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                 <Link 
                   href={`https://github.com/${contributor.username}`} 
                   target="_blank" 
-                  className="w-full mt-4"
+                  className="w-full flex justify-center mt-4"
                 >
-                  <Button className="w-full bg-gradient-to-r cursor-pointer from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View GitHub Profile
+                  <Button className="bg-gradient-to-r cursor-pointer from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70 shadow-md">
+                    <Github className="w-5 h-5" />
                   </Button>
                 </Link>
               </div>
@@ -186,7 +190,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-primary">
                 <BarChart3 className="w-5 h-5" />
-                This Month's Activity
+                This Month&apos;s Activity
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -221,7 +225,6 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {sortedActivities.map(([activity, data]) => {
-                  const percentage = Math.round((data.points / maxActivityPoints) * 100);
                   return (
                     <div key={activity} className="group p-5 rounded-xl border bg-gradient-to-br from-background to-muted/30 hover:shadow-lg hover:border-primary/30 transition-all duration-200">
                       <div className="flex items-center gap-3 mb-4">
@@ -264,7 +267,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
                   {recentContributions.map((activity, index) => {
                     const date = new Date(activity.occured_at);
                     const isVeryRecent = index < 3;
-                    const daysAgo = Math.floor((Date.now() - date.getTime()) / (1000 * 60 * 60 * 24));
+                    const daysAgo = Math.floor((currentTime - date.getTime()) / (1000 * 60 * 60 * 24));
                     
                     return (
                       <div 
@@ -336,84 +339,10 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
             </Card>
           )}
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Calendar className="w-5 h-5" />
-                Daily Activity Timeline
-                <Badge variant="outline" className="ml-2">{recentActivity.length} days</Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-2 max-h-64 overflow-y-auto pr-2">
-                {recentActivity
-                  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-                  .slice(0, 60)
-                  .map((day, index) => {
-                    const date = new Date(day.date);
-                    const isRecent = index < 7;
-                    const intensity = Math.min((day.points / 20) * 100, 100);
-                    const isToday = date.toDateString() === new Date().toDateString();
-                    
-                    return (
-                      <div 
-                        key={day.date}
-                        className={`flex items-center justify-between p-3 rounded-lg transition-all hover:shadow-sm border ${
-                          isToday 
-                            ? 'bg-gradient-to-r from-primary/10 to-primary/20 border-primary/40 ring-1 ring-primary/20' 
-                            : isRecent 
-                            ? 'bg-primary/5 border-primary/20 hover:bg-primary/10' 
-                            : 'bg-muted/20 border-transparent hover:bg-muted/40 hover:border-muted'
-                        }`}
-                      >
-                        <div className="flex items-center gap-4">
-                          <div 
-                            className={`w-4 h-4 rounded-full transition-all ${
-                              isToday 
-                                ? 'bg-primary shadow-lg ring-2 ring-primary/30' 
-                                : 'bg-gradient-to-r from-primary to-primary/70'
-                            }`}
-                            style={{ 
-                              opacity: isToday ? 1 : Math.max(intensity / 100, 0.3)
-                            }}
-                          />
-                          <div>
-                            <div className={`font-medium text-sm ${
-                              isToday ? 'text-primary font-bold' : ''
-                            }`}>
-                              {isToday ? 'Today' : date.toLocaleDateString('en-US', { 
-                                weekday: 'short',
-                                month: 'short',
-                                day: 'numeric'
-                              })}
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              {day.count} {day.count === 1 ? 'activity' : 'activities'}
-                            </div>
-                          </div>
-                        </div>
-                        <Badge 
-                          variant={isToday ? "default" : isRecent ? "secondary" : "outline"} 
-                          className={`text-xs font-bold ${
-                            isToday ? 'bg-primary shadow-sm' : ''
-                          }`}
-                        >
-                          {day.points} pts
-                        </Badge>
-                      </div>
-                    );
-                  })}
-              </div>
-              
-              {recentActivity.length === 0 && (
-                <div className="text-center text-muted-foreground py-12">
-                  <Calendar className="w-16 h-16 mx-auto mb-4 opacity-30" />
-                  <h3 className="text-lg font-semibold mb-2">No Activity Data</h3>
-                  <p>This contributor doesn't have daily activity data available yet.</p>
-                </div>
-              )}
-            </CardContent>
-          </Card>
+          <GitHubHeatmap 
+            dailyActivity={recentActivity}
+            className="border-primary/20"
+          />
         </div>
       </div>
     </div>

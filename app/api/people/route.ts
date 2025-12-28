@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import path from "path";
 import fs from "fs";
+import { coreTeamMembers, alumniMembers, type TeamMember } from "@/lib/team-data";
 
 interface ContributorEntry {
   username: string;
@@ -60,7 +61,9 @@ export async function GET() {
 
     return NextResponse.json({
       updatedAt: latestUpdatedAt,
-      people
+      people,
+      coreTeam: coreTeamMembers,
+      alumni: alumniMembers
     });
   } catch (error) {
     console.error('Error fetching people:', error);
