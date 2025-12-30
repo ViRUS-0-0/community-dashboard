@@ -25,6 +25,23 @@ import {
   AlertCircle
 } from "lucide-react";
 
+type ActivityUIConfig = {
+  icon: JSX.Element;
+  gradient: string;
+  borderColor: string;
+  bgColor: string;
+  iconBg: string;
+  textColor: string;
+  accentColor: string;
+};
+
+type ActivityKey =
+  | "PR merged"
+  | "PR opened"
+  | "Issue opened"
+  | "commit"
+  | "star";
+
 interface ContributorEntry {
   username: string;
   name: string | null;
@@ -48,15 +65,7 @@ interface ContributorDetailProps {
 }
 
 // Activity type configuration with unique visual identity
-const activityConfig: Record<string, {
-  icon: JSX.Element;
-  gradient: string;
-  borderColor: string;
-  bgColor: string;
-  iconBg: string;
-  textColor: string;
-  accentColor: string;
-}> = {
+const activityConfig: Record<ActivityKey, ActivityUIConfig> = {
   "PR merged": {
     icon: <GitMerge className="w-4 h-4" />,
     gradient: "from-purple-500/10 via-purple-500/5 to-transparent",
@@ -64,7 +73,7 @@ const activityConfig: Record<string, {
     bgColor: "bg-purple-500/5",
     iconBg: "bg-purple-500/15 group-hover:bg-purple-500/25",
     textColor: "text-purple-600 dark:text-purple-400",
-    accentColor: "bg-purple-500"
+    accentColor: "bg-purple-500",
   },
   "PR opened": {
     icon: <GitPullRequest className="w-4 h-4" />,
@@ -73,7 +82,7 @@ const activityConfig: Record<string, {
     bgColor: "bg-blue-500/5",
     iconBg: "bg-blue-500/15 group-hover:bg-blue-500/25",
     textColor: "text-blue-600 dark:text-blue-400",
-    accentColor: "bg-blue-500"
+    accentColor: "bg-blue-500",
   },
   "Issue opened": {
     icon: <AlertCircle className="w-4 h-4" />,
@@ -82,69 +91,72 @@ const activityConfig: Record<string, {
     bgColor: "bg-orange-500/5",
     iconBg: "bg-orange-500/15 group-hover:bg-orange-500/25",
     textColor: "text-orange-600 dark:text-orange-400",
-    accentColor: "bg-orange-500"
+    accentColor: "bg-orange-500",
   },
-  "commit": {
+  commit: {
     icon: <GitCommit className="w-4 h-4" />,
     gradient: "from-green-500/10 via-green-500/5 to-transparent",
     borderColor: "border-green-500/30 hover:border-green-500/50",
     bgColor: "bg-green-500/5",
     iconBg: "bg-green-500/15 group-hover:bg-green-500/25",
     textColor: "text-green-600 dark:text-green-400",
-    accentColor: "bg-green-500"
+    accentColor: "bg-green-500",
   },
-  "star": {
+  star: {
     icon: <Star className="w-4 h-4" />,
     gradient: "from-yellow-500/10 via-yellow-500/5 to-transparent",
     borderColor: "border-yellow-500/30 hover:border-yellow-500/50",
     bgColor: "bg-yellow-500/5",
     iconBg: "bg-yellow-500/15 group-hover:bg-yellow-500/25",
     textColor: "text-yellow-600 dark:text-yellow-400",
-    accentColor: "bg-yellow-500"
-  }
+    accentColor: "bg-yellow-500",
+  },
 };
 
-// Default fallback configuration
-const defaultConfig = {
+
+
+const defaultConfig: ActivityUIConfig = {
   icon: <Activity className="w-4 h-4" />,
   gradient: "from-gray-500/10 via-gray-500/5 to-transparent",
   borderColor: "border-gray-500/30 hover:border-gray-500/50",
   bgColor: "bg-gray-500/5",
   iconBg: "bg-gray-500/15 group-hover:bg-gray-500/25",
   textColor: "text-gray-600 dark:text-gray-400",
-  accentColor: "bg-gray-500"
+  accentColor: "bg-gray-500",
 };
+
 
 export function ContributorDetail({ contributor, onBack }: ContributorDetailProps) {
   const [currentTime] = useState(() => Date.now());
 
-  const getActivityConfig = (activityType: string): typeof defaultConfig => {
-    const type = activityType.toLowerCase();
-    
-    // Check for exact matches first
-    if (activityConfig[activityType]) {
-      return activityConfig[activityType];
-    }
-    
-    // Check for partial matches
-    if (type.includes('pr merged') || type.includes('merged')) {
-      return activityConfig["PR merged"];
-    }
-    if (type.includes('pr opened') || type.includes('opened pr')) {
-      return activityConfig["PR opened"];
-    }
-    if (type.includes('issue')) {
-      return activityConfig["Issue opened"];
-    }
-    if (type.includes('commit')) {
-      return activityConfig["commit"];
-    }
-    if (type.includes('star')) {
-      return activityConfig["star"];
-    }
-    
-    return defaultConfig;
-  };
+const getActivityConfig = (activityType: string): ActivityUIConfig => {
+  const type = activityType.toLowerCase();
+
+  if (activityType in activityConfig) {
+    return activityConfig[activityType as ActivityKey];
+  }
+
+  if (type.includes("pr merged") || type.includes("merged")) {
+    return activityConfig["PR merged"];
+  }
+  if (type.includes("pr opened") || type.includes("opened pr")) {
+    return activityConfig["PR opened"];
+  }
+  if (type.includes("issue")) {
+    return activityConfig["Issue opened"];
+  }
+  if (type.includes("commit")) {
+    return activityConfig["commit"];
+  }
+  if (type.includes("star")) {
+    return activityConfig["star"];
+  }
+
+  return defaultConfig;
+};
+
+
+
 
   const getActivityIcon = (activityType: string) => {
     return getActivityConfig(activityType).icon;
