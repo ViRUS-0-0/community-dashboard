@@ -21,7 +21,7 @@ meta:
   description: CircuitVerse Leaderboard tracks weekly open-source contributions across the CircuitVerse organization.
   image_url: https://avatars.githubusercontent.com/u/42944450?s=280&v=4
   site_url: http://localhost:3000
-  favicon_url: https://circuitverse.org/favicon.ico
+  favicon_url: http://localhost:3000/favicon.ico
 
 # -----------------------------------------------------------
 # 🏆 Leaderboard related configurations

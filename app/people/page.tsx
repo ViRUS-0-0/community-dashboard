@@ -9,6 +9,7 @@ import { PeopleGrid } from "@/components/people/PeopleGrid";
 import { ContributorDetail } from "@/components/people/ContributorDetail";
 import { TeamSection } from "@/components/people/TeamSection";
 import { type TeamMember } from "@/lib/team-data";
+import { useScrollRestoration } from "@/lib/hooks/useScrollRestoration";
 
 interface ContributorEntry {
   username: string;
@@ -68,6 +69,9 @@ export default function PeoplePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Use scroll restoration hook - active when no contributor is selected (list view)
+  const { saveScrollPosition } = useScrollRestoration({ isActive: !selectedContributor });
+
 
   useEffect(() => {
     const loadData = async () => {
@@ -93,6 +97,7 @@ export default function PeoplePage() {
 
 
   const handleContributorClick = (contributor: ContributorEntry) => {
+    saveScrollPosition();
     setSelectedContributor(contributor);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

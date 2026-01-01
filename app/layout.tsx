@@ -27,6 +27,8 @@ export const metadata: Metadata = {
   description: config.meta.description,
   icons: {
     icon: config.meta.favicon_url,
+    shortcut: '../public/favicon.ico',
+    apple: '../public/favicon.ico',
   },
   openGraph: {
     title: config.meta.title,
