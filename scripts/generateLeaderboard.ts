@@ -50,13 +50,9 @@ export type UserEntry = Contributor & {
 };
 
 /* -------------------------------------------------------
-   DB → LEADERBOARD MAPPER (CRITICAL FIX)
+   DB → LEADERBOARD MAPPER
 ------------------------------------------------------- */
 
-/**
- * Converts a database activity into a leaderboard-safe activity.
- * Prevents runtime crashes due to schema mismatches.
- */
 export function mapDbActivityToLeaderboardActivity(
   dbActivity: {
     contributor: string;
@@ -112,7 +108,7 @@ function addToBreakdown(
 }
 
 /* -------------------------------------------------------
-   MAIN LEADERBOARD GENERATOR
+   MAIN LEADERBOARD GENERATOR (PURE)
 ------------------------------------------------------- */
 
 export function generateLeaderboard(
@@ -145,39 +141,13 @@ export function generateLeaderboard(
 
     contributor.total_points += activity.points;
 
-    /* ---- DAILY ACTIVITY (SAFE DATE PARSING) ---- */
+    // ---- DAILY ACTIVITY (SAFE DATE PARSING) ----
     const parsedDate = new Date(activity.occured_at);
-
-    // Guard against invalid / malformed dates
     if (isNaN(parsedDate.getTime())) continue;
-  const yearData = {
-    period: "year",
-    updatedAt: Date.now(),
-    startDate: iso(since),
-    endDate: iso(now),
-    hiddenRoles: [],
-    topByActivity: {},
-    entries,
-  };
-
-  fs.writeFileSync(
-    path.join(outDir, "year.json"),
-    JSON.stringify(yearData, null, 2)
-  );
-
-  console.log(`✅ Generated year.json (${entries.length} contributors)`);
-
-  derivePeriod(yearData, 7, "week");
-  derivePeriod(yearData, 30, "month");
-  derivePeriod(yearData, 60, "2month");
-
-  generateRecentActivities(yearData, 14);
-}
 
     const date = parsedDate.toISOString().slice(0, 10);
 
     let day = contributor.daily_activity.find(d => d.date === date);
-
     if (!day) {
       day = { date, count: 0, points: 0 };
       contributor.daily_activity.push(day);
