@@ -22,10 +22,12 @@ interface PaginatedActivitySectionProps {
   itemsPerPage?: number;
 }
 
+/** displaying a paginated list of activities **/  
 export function PaginatedActivitySection({
   group,
   itemsPerPage = 9,
-}: PaginatedActivitySectionProps) {
+}: PaginatedActivitySectionProps){
+  /** current active pageno.  */
   const [currentPage, setCurrentPage] = useState(1);
 
   const totalPages = Math.ceil(group.activities.length / itemsPerPage);
@@ -33,51 +35,54 @@ export function PaginatedActivitySection({
   const endIndex = startIndex + itemsPerPage;
   const currentActivities = group.activities.slice(startIndex, endIndex);
 
-const windowSize = 3;
-const [windowStart, setWindowStart] = useState(1);
+  /** # of page buttons visible at once */
+  const windowSize = 3;
 
-const goToNext = () => {
-  setCurrentPage((prev) => {
-    const next = Math.min(totalPages, prev + 1);
+  /** starting pageno. of the visible pagination window */
+  const [windowStart, setWindowStart] = useState(1);
+
+  /** navigate to the next page and shift the pagination window forward when req **/
+  const goToNext = () => {
+    setCurrentPage((prev) => {
+      const next = Math.min(totalPages, prev + 1);
+      setWindowStart((ws) => {
+        if(next > ws + windowSize - 1){
+          return ws + 1;
+        }
+        return ws;
+      });
+      return next;
+    });
+  };
+
+  /** Navigate to the previous page and shift the pagination window backward if required **/
+  const goToPrevious = () => {
+    setCurrentPage((prev) => {
+      const next = Math.max(1, prev - 1);
+      setWindowStart((ws) => {
+        if (next < ws) {
+          return ws - 1;
+        }
+        return ws;
+      });
+
+      return next;
+    });
+  };
+
+  /** Navigate to a specific page and adjust the pagination window to keep it in view **/
+  const goToPage = (page: number) => {
+    setCurrentPage(page);
     setWindowStart((ws) => {
-      if(next > ws + windowSize - 1){
-        return ws + 1;
+      if (page < ws) return page;
+      if (page > ws + windowSize - 1) {
+        return page - windowSize + 1;
       }
       return ws;
     });
+  };
 
-    return next;
-  });
-};
-
-const goToPrevious = () => {
-  setCurrentPage((prev) => {
-    const next = Math.max(1, prev - 1);
-    setWindowStart((ws) => {
-      // shift only if previous page is outside view
-      if(next < ws){
-        return ws - 1;
-      }
-      return ws;
-    });
-
-    return next;
-  });
-};
-
-const goToPage = (page: number) => {
-  setCurrentPage(page);
-  setWindowStart((ws) => {
-    if(page < ws) 
-      return page;
-    if(page > ws + windowSize - 1){
-      return page - windowSize + 1;
-    }
-
-    return ws;
-  });
-};
-
+  /** returns the list of pagenos currently visible in the pagination window **/
   const getPageNumbers = () => {
     const pages: number[] = [];
     const end = Math.min(windowStart + windowSize - 1, totalPages);
