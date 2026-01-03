@@ -221,7 +221,7 @@ export function ContributorDetail({ contributor, onBack }: ContributorDetailProp
 
   return (
     <div className="mx-auto px-4 py-8 max-w-7xl">
-      <Button onClick={onBack} variant="outline" className="mb-6 hover:bg-primary cursor-pointer transition-colors">
+      <Button onClick={onBack} variant="outline" className="mb-6 cursor-pointer transition-colors">
         <ArrowLeft className="w-4 h-4 mr-2" />
         Back to People
       </Button>
