@@ -1,8 +1,8 @@
 {
   "period": "week",
-  "updatedAt": 1767639343218,
-  "startDate": "2025-12-29",
-  "endDate": "2026-01-05",
+  "updatedAt": 1767661417711,
+  "startDate": "2025-12-30",
+  "endDate": "2026-01-06",
   "hiddenRoles": [],
   "topByActivity": {},
   "entries": [
@@ -11,7 +11,7 @@
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/159947791?v=4",
       "role": "Contributor",
-      "total_points": 61,
+      "total_points": 71,
       "activity_breakdown": {
         "PR opened": {
           "count": 4,
@@ -22,19 +22,19 @@
           "points": 20
         },
         "Issue opened": {
-          "count": 5,
-          "points": 5
+          "count": 7,
+          "points": 7
         },
         "Review submitted": {
-          "count": 7,
-          "points": 28
+          "count": 9,
+          "points": 36
         }
       },
       "daily_activity": [
         {
           "date": "2026-01-05",
-          "count": 10,
-          "points": 36
+          "count": 14,
+          "points": 46
         },
         {
           "date": "2025-12-30",
@@ -74,10 +74,38 @@
         },
         {
           "type": "Issue opened",
+          "occured_at": "2026-01-05T21:08:36Z",
+          "title": "🎨 Improve design for Top 3 leaderboard ranks (Gold / Silver / Bronze)",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/133",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-05T21:01:42Z",
+          "title": "🐛 Leaderboard grid view profile alignment breaks on mobile",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/132",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
           "occured_at": "2026-01-05T11:16:51Z",
           "title": "UI issue in Sort By dropdown (Contributor / Maintainer section)",
           "link": "https://github.com/CircuitVerse/community-dashboard/issues/123",
           "points": 1
+        },
+        {
+          "type": "Review submitted",
+          "occured_at": "2026-01-05T20:48:30Z",
+          "title": "Review on PR #107",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/107",
+          "points": 4
+        },
+        {
+          "type": "Review submitted",
+          "occured_at": "2026-01-05T20:39:35Z",
+          "title": "Review on PR #131",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/131",
+          "points": 4
         },
         {
           "type": "Review submitted",
@@ -358,6 +386,194 @@
       ]
     },
     {
+      "username": "haaasini01",
+      "name": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/180000253?v=4",
+      "role": "Contributor",
+      "total_points": 42,
+      "activity_breakdown": {
+        "PR opened": {
+          "count": 7,
+          "points": 14
+        },
+        "PR merged": {
+          "count": 4,
+          "points": 20
+        },
+        "Issue opened": {
+          "count": 8,
+          "points": 8
+        }
+      },
+      "daily_activity": [
+        {
+          "date": "2026-01-05",
+          "count": 5,
+          "points": 11
+        },
+        {
+          "date": "2025-12-31",
+          "count": 2,
+          "points": 3
+        },
+        {
+          "date": "2025-12-30",
+          "count": 2,
+          "points": 3
+        },
+        {
+          "date": "2026-01-02",
+          "count": 5,
+          "points": 15
+        },
+        {
+          "date": "2026-01-01",
+          "count": 2,
+          "points": 3
+        },
+        {
+          "date": "2026-01-04",
+          "count": 3,
+          "points": 7
+        }
+      ],
+      "activities": [
+        {
+          "type": "PR opened",
+          "occured_at": "2026-01-05T19:41:10Z",
+          "title": "fix - footer layout responsiveness on tablet and smaller screens",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/131",
+          "points": 2
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2026-01-05T15:28:25Z",
+          "title": "fix - modify Recent Contributions to be time sorted",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/127",
+          "points": 2
+        },
+        {
+          "type": "PR merged",
+          "occured_at": "2026-01-05T18:03:31Z",
+          "title": "fix - modify Recent Contributions to be time sorted",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/127",
+          "points": 5
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-05T16:22:40Z",
+          "title": "Footer not responsive below desktop view causing empty space",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/129",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-05T15:38:37Z",
+          "title": "Recent Contributions missing for some contributor profiles",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/128",
+          "points": 1
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2025-12-31T15:47:16Z",
+          "title": "Remove stray char from truth table in Canonical Functions subchapter",
+          "link": "https://github.com/CircuitVerse/Interactive-Book/pull/745",
+          "points": 2
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2025-12-30T15:15:24Z",
+          "title": "justify text alignment in documentation",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/483",
+          "points": 2
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2026-01-02T12:37:29Z",
+          "title": "fix - reflect actual rank while searching",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/77",
+          "points": 2
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2026-01-02T05:00:21Z",
+          "title": "fix - Update Pagination state for pages beyond 3",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/70",
+          "points": 2
+        },
+        {
+          "type": "PR opened",
+          "occured_at": "2026-01-01T19:56:05Z",
+          "title": "Add Points, PR and Issue sort options to filter menu and improve clear behavior",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/67",
+          "points": 2
+        },
+        {
+          "type": "PR merged",
+          "occured_at": "2026-01-04T19:21:57Z",
+          "title": "fix - reflect actual rank while searching",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/77",
+          "points": 5
+        },
+        {
+          "type": "PR merged",
+          "occured_at": "2026-01-02T09:11:27Z",
+          "title": "fix - Update Pagination state for pages beyond 3",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/70",
+          "points": 5
+        },
+        {
+          "type": "PR merged",
+          "occured_at": "2026-01-02T09:18:28Z",
+          "title": "Add Points, PR and Issue sort options to filter menu and improve clear behavior",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/67",
+          "points": 5
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2025-12-31T15:31:01Z",
+          "title": "Stray character displayed in the truth table in Canonical Functions subchapterz",
+          "link": "https://github.com/CircuitVerse/Interactive-Book/issues/744",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2025-12-30T14:15:28Z",
+          "title": "Feature Request - Enable justified text for docs content",
+          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/482",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-04T18:53:24Z",
+          "title": "Recent Contributions should be time-sorted",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/111",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-04T18:50:09Z",
+          "title": "Recent Contributions highlights wrong contributions",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/110",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-02T11:32:26Z",
+          "title": "Ranks change incorrectly while searching for contributors on leaderboard",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/75",
+          "points": 1
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-01T20:25:11Z",
+          "title": "Pagination fails to display active page beyond page 3 in Recent Activities section",
+          "link": "https://github.com/CircuitVerse/community-dashboard/issues/68",
+          "points": 1
+        }
+      ]
+    },
+    {
       "username": "Me-Priyank",
       "name": null,
       "avatar_url": "https://avatars.githubusercontent.com/u/143987856?v=4",
@@ -508,187 +724,6 @@
           "occured_at": "2026-01-01T12:23:24Z",
           "title": "Broken navigation when opening contributor profile from /people",
           "link": "https://github.com/CircuitVerse/community-dashboard/issues/59",
-          "points": 1
-        }
-      ]
-    },
-    {
-      "username": "haaasini01",
-      "name": null,
-      "avatar_url": "https://avatars.githubusercontent.com/u/180000253?v=4",
-      "role": "Contributor",
-      "total_points": 40,
-      "activity_breakdown": {
-        "PR opened": {
-          "count": 6,
-          "points": 12
-        },
-        "PR merged": {
-          "count": 4,
-          "points": 20
-        },
-        "Issue opened": {
-          "count": 8,
-          "points": 8
-        }
-      },
-      "daily_activity": [
-        {
-          "date": "2026-01-05",
-          "count": 4,
-          "points": 9
-        },
-        {
-          "date": "2025-12-31",
-          "count": 2,
-          "points": 3
-        },
-        {
-          "date": "2025-12-30",
-          "count": 2,
-          "points": 3
-        },
-        {
-          "date": "2026-01-02",
-          "count": 5,
-          "points": 15
-        },
-        {
-          "date": "2026-01-01",
-          "count": 2,
-          "points": 3
-        },
-        {
-          "date": "2026-01-04",
-          "count": 3,
-          "points": 7
-        }
-      ],
-      "activities": [
-        {
-          "type": "PR opened",
-          "occured_at": "2026-01-05T15:28:25Z",
-          "title": "fix - modify Recent Contributions to be time sorted",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/127",
-          "points": 2
-        },
-        {
-          "type": "PR merged",
-          "occured_at": "2026-01-05T18:03:31Z",
-          "title": "fix - modify Recent Contributions to be time sorted",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/127",
-          "points": 5
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-05T16:22:40Z",
-          "title": "Footer not responsive below desktop view causing empty space",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/129",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-05T15:38:37Z",
-          "title": "Recent Contributions missing for some contributor profiles",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/128",
-          "points": 1
-        },
-        {
-          "type": "PR opened",
-          "occured_at": "2025-12-31T15:47:16Z",
-          "title": "Remove stray char from truth table in Canonical Functions subchapter",
-          "link": "https://github.com/CircuitVerse/Interactive-Book/pull/745",
-          "points": 2
-        },
-        {
-          "type": "PR opened",
-          "occured_at": "2025-12-30T15:15:24Z",
-          "title": "justify text alignment in documentation",
-          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/pull/483",
-          "points": 2
-        },
-        {
-          "type": "PR opened",
-          "occured_at": "2026-01-02T12:37:29Z",
-          "title": "fix - reflect actual rank while searching",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/77",
-          "points": 2
-        },
-        {
-          "type": "PR opened",
-          "occured_at": "2026-01-02T05:00:21Z",
-          "title": "fix - Update Pagination state for pages beyond 3",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/70",
-          "points": 2
-        },
-        {
-          "type": "PR opened",
-          "occured_at": "2026-01-01T19:56:05Z",
-          "title": "Add Points, PR and Issue sort options to filter menu and improve clear behavior",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/67",
-          "points": 2
-        },
-        {
-          "type": "PR merged",
-          "occured_at": "2026-01-04T19:21:57Z",
-          "title": "fix - reflect actual rank while searching",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/77",
-          "points": 5
-        },
-        {
-          "type": "PR merged",
-          "occured_at": "2026-01-02T09:11:27Z",
-          "title": "fix - Update Pagination state for pages beyond 3",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/70",
-          "points": 5
-        },
-        {
-          "type": "PR merged",
-          "occured_at": "2026-01-02T09:18:28Z",
-          "title": "Add Points, PR and Issue sort options to filter menu and improve clear behavior",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/67",
-          "points": 5
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2025-12-31T15:31:01Z",
-          "title": "Stray character displayed in the truth table in Canonical Functions subchapterz",
-          "link": "https://github.com/CircuitVerse/Interactive-Book/issues/744",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2025-12-30T14:15:28Z",
-          "title": "Feature Request - Enable justified text for docs content",
-          "link": "https://github.com/CircuitVerse/CircuitVerseDocs/issues/482",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-04T18:53:24Z",
-          "title": "Recent Contributions should be time-sorted",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/111",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-04T18:50:09Z",
-          "title": "Recent Contributions highlights wrong contributions",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/110",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-02T11:32:26Z",
-          "title": "Ranks change incorrectly while searching for contributors on leaderboard",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/75",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2026-01-01T20:25:11Z",
-          "title": "Pagination fails to display active page beyond page 3 in Recent Activities section",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/68",
           "points": 1
         }
       ]
@@ -1595,10 +1630,6 @@
       "role": "Contributor",
       "total_points": 11,
       "activity_breakdown": {
-        "PR opened": {
-          "count": 2,
-          "points": 4
-        },
         "PR merged": {
           "count": 1,
           "points": 5
@@ -1606,9 +1637,18 @@
         "Issue opened": {
           "count": 2,
           "points": 2
+        },
+        "PR opened": {
+          "count": 2,
+          "points": 4
         }
       },
       "daily_activity": [
+        {
+          "date": "2026-01-05",
+          "count": 2,
+          "points": 6
+        },
         {
           "date": "2025-12-30",
           "count": 2,
@@ -1618,14 +1658,23 @@
           "date": "2026-01-04",
           "count": 1,
           "points": 2
-        },
-        {
-          "date": "2025-12-29",
-          "count": 2,
-          "points": 6
         }
       ],
       "activities": [
+        {
+          "type": "PR merged",
+          "occured_at": "2026-01-05T20:48:38Z",
+          "title": "Leaderboard - UI change and mobile responsiveness",
+          "link": "https://github.com/CircuitVerse/community-dashboard/pull/107",
+          "points": 5
+        },
+        {
+          "type": "Issue opened",
+          "occured_at": "2026-01-05T21:13:25Z",
+          "title": "🐞 Bug - Missing 'File' Menu options in Tauri Simulator",
+          "link": "https://github.com/CircuitVerse/cv-frontend-vue/issues/721",
+          "points": 1
+        },
         {
           "type": "PR opened",
           "occured_at": "2025-12-30T22:02:58Z",
@@ -1641,24 +1690,10 @@
           "points": 2
         },
         {
-          "type": "PR merged",
-          "occured_at": "2025-12-29T21:27:59Z",
-          "title": "Add contributor details to People page",
-          "link": "https://github.com/CircuitVerse/community-dashboard/pull/26",
-          "points": 5
-        },
-        {
           "type": "Issue opened",
           "occured_at": "2025-12-30T21:57:52Z",
           "title": "Adding the Analytics Page of Circuitverse",
           "link": "https://github.com/CircuitVerse/community-dashboard/issues/52",
-          "points": 1
-        },
-        {
-          "type": "Issue opened",
-          "occured_at": "2025-12-29T20:52:48Z",
-          "title": "Refactor leaderboard card ui",
-          "link": "https://github.com/CircuitVerse/community-dashboard/issues/46",
           "points": 1
         }
       ]
